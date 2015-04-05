@@ -113,8 +113,8 @@ public abstract class Interval {
 			return false;
 		}
 	}*/
-	/*
-	public boolean intersectsWith(Interval interval) {
+	
+	/*public boolean intersectsWith(Interval interval) {
 		if (minimum == interval.maximum) {
 			switch (opening) {
 			case BOTH_OPENED:
