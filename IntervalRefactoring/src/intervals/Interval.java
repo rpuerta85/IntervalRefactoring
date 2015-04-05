@@ -1,15 +1,23 @@
 package intervals;
 
+import utils.Point;
+
 public abstract class Interval {
 	
 	protected double minimum;
 	protected double maximum;
+	//protected Point minimum;
+	//protected Point maximum;
+	
 	protected Opening opening;
 
 	 Interval(double minimum, double maximum, Opening opening) {
 		this.minimum = minimum;
 		this.maximum = maximum;
 		this.opening = opening;
+		/* this.minimum = new Point (minimum);
+		this.maximum = new Point(maximum);
+		this.opening = opening;*/
 	}
 	
 	public double midPoint() {
