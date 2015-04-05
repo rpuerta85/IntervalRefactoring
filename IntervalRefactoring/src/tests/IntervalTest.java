@@ -188,6 +188,7 @@ public class IntervalTest {
 		assertFalse(unopenedOpenedPivot.includes(IntervalFactory.getIntervalRightOpened(35, 40, Opening.RIGHT_OPENED)));
 		assertFalse(unopenedOpenedPivot.includes(IntervalFactory.getIntervalRightOpened(40, 45, Opening.RIGHT_OPENED)));
 
+		
 		assertFalse(unopenedOpenedPivot.includes(IntervalFactory.getIntervalUnOpened(10, 15, Opening.UNOPENED)));
 		assertFalse(unopenedOpenedPivot.includes(IntervalFactory.getIntervalUnOpened(15, 20, Opening.UNOPENED)));
 		assertTrue(unopenedOpenedPivot.includes(IntervalFactory.getIntervalUnOpened(20, 25, Opening.UNOPENED)));
