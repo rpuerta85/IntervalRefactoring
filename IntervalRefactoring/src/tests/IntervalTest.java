@@ -34,6 +34,7 @@ public class IntervalTest {
 		assertFalse(IntervalFactory.getInterval(0, 10, Opening.RIGHT_OPENED).includes(-3));
 		assertFalse(IntervalFactory.getInterval(0, 10, Opening.UNOPENED).includes(-3));
 
+		
 		assertFalse(IntervalFactory.getIntervalBothOpened(0, 10, Opening.BOTH_OPENED).includes(0));
 		assertFalse(IntervalFactory.getInterval(0, 10, Opening.LEFT_OPENED).includes(0));
 		assertTrue(IntervalFactory.getInterval(0, 10, Opening.RIGHT_OPENED).includes(0));
