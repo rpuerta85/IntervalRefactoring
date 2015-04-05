@@ -15,6 +15,7 @@ public class BothOpened extends Interval{
 		this.minimum2 = new FromPoint(minimum);
 	}
 
+	
 	@Override
 	public boolean includes(double value) {
 		//return minimum < value && value < maximum;
