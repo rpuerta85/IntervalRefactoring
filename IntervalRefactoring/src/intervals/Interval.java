@@ -12,6 +12,7 @@ public abstract class Interval {
 	
 	protected Opening opening;
 
+	
 	 Interval(double minimum, double maximum, Opening opening) {
 		this.minimum = minimum;
 		this.maximum = maximum;
