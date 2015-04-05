@@ -8,6 +8,8 @@ public class RightOpened extends Interval {
 	protected ExactPoint minimum2;
 	public RightOpened(double minimum, double maximum, Opening opening) {
 		super(minimum, maximum, opening);
+		this.minimum2 = new ExactPoint(minimum);
+		this.maximum2 = new FromPoint(maximum);
 	}
 
 	@Override
