@@ -2,6 +2,7 @@ package intervals;
 
 public class Interval {
 	
+	
 	private double minimum;
 	private double maximum;
 	private Opening opening;
