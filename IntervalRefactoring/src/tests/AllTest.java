@@ -8,4 +8,5 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({IntervalTest.class})
 public class AllTest {
 
+	
 }
