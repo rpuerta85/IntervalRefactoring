@@ -1,14 +1,24 @@
 package intervals;
 
+import utils.FromPoint;
+import utils.Point;
+import utils.UntilPoint;
+
+
 public class BothOpened extends Interval{
+	protected UntilPoint maximum2;
+	protected FromPoint minimum2;
 	
 	public BothOpened(double minimum, double maximum, Opening opening) {
 		super(minimum, maximum, opening);
+		this.maximum2 = new UntilPoint(maximum);
+		this.minimum2 = new FromPoint(minimum);
 	}
 
 	@Override
 	public boolean includes(double value) {
-		return minimum < value && value < maximum;
+		//return minimum < value && value < maximum;
+		return minimum2.isLessThan(value) && maximum2.isLessThan(value);
 	}
 
 	@Override
