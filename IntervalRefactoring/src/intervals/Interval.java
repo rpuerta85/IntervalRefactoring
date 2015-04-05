@@ -4,7 +4,7 @@ public abstract class Interval {
 	
 	protected double minimum;
 	protected double maximum;
-	private Opening opening;
+	protected Opening opening;
 
 	 Interval(double minimum, double maximum, Opening opening) {
 		this.minimum = minimum;
