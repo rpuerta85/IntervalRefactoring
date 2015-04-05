@@ -1,6 +1,6 @@
 package intervals;
 
-public class Interval {
+public abstract class Interval {
 	
 	private double minimum;
 	private double maximum;
@@ -16,7 +16,7 @@ public class Interval {
 		return (maximum + minimum) / 2;
 	}
 
-	public boolean includes(double value) {
+	/*public boolean includes(double value) {
 		switch (opening) {
 		case BOTH_OPENED:
 			return minimum < value && value < maximum;
@@ -30,8 +30,9 @@ public class Interval {
 			assert false;
 			return false;
 		}
-	}
-
+	}*/
+	public abstract boolean includes(double value);
+	
 	public boolean includes(Interval interval) {
 		boolean minimumIncluded = this.includes(interval.minimum);
 		boolean maximumIncluded = this.includes(interval.maximum);
