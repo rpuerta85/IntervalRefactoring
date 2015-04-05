@@ -11,7 +11,6 @@ public class RightOpened extends Interval {
 		return minimum <= value && value < maximum;
 	}
 
-	
 	@Override
 	public boolean includes(Interval interval) {
 		boolean minimumIncluded = this.includes(interval.minimum);
