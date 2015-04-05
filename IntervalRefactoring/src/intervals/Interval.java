@@ -113,7 +113,7 @@ public abstract class Interval {
 			return false;
 		}
 	}*/
-	
+	/*
 	public boolean intersectsWith(Interval interval) {
 		if (minimum == interval.maximum) {
 			switch (opening) {
@@ -145,8 +145,11 @@ public abstract class Interval {
 		}
 		return this.includes(interval.minimum)
 				|| this.includes(interval.maximum);
-	}
+	}*/
 
+	
+	public abstract boolean intersectsWith(Interval interval);
+	
 	@Override
 	public String toString() {
 		// TODO
