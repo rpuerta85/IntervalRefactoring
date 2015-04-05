@@ -38,7 +38,8 @@ public class RightOpened extends Interval {
 	@Override
 	public boolean intersectsWith(Interval interval) {
 			if (minimum == interval.maximum) {
-					return false;
+				return interval.opening == Opening.LEFT_OPENED ||
+						interval.opening == Opening.UNOPENED;
 			}
 			if (maximum == interval.minimum) {
 					return false;

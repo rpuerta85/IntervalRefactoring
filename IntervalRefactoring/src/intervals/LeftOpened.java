@@ -40,7 +40,8 @@ public class LeftOpened extends Interval {
 				return false;
 		}
 		if (maximum == interval.minimum) {
-				return false;
+			return interval.opening == Opening.RIGHT_OPENED ||
+					interval.opening == Opening.UNOPENED;
 			
 		}
 		return this.includes(interval.minimum)
@@ -48,3 +49,4 @@ public class LeftOpened extends Interval {
 	}
 
 }
+
