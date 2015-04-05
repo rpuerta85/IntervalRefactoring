@@ -1,9 +1,17 @@
 package intervals;
 
-public class LeftOpened extends Interval {
+import utils.ExactPoint;
+import utils.FromPoint;
+import utils.UntilPoint;
 
+public class LeftOpened extends Interval {
+	protected ExactPoint maximum2;
+	protected FromPoint minimum2;
+	
 	public LeftOpened(double minimum, double maximum, Opening opening) {
 		super(minimum, maximum, opening);
+		this.minimum2 = new FromPoint(minimum);
+		this.maximum2 = new ExactPoint(maximum);
 	}
 
 	@Override
