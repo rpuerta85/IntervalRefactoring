@@ -62,7 +62,6 @@ public class IntervalTest {
 		
 		Interval bothOpenedPivot = IntervalFactory.getIntervalBothOpened(20, 35, Opening.BOTH_OPENED);
 
-		
 		assertFalse(bothOpenedPivot.includes(IntervalFactory.getIntervalBothOpened(10, 15, Opening.BOTH_OPENED)));
 		assertFalse(bothOpenedPivot.includes(IntervalFactory.getIntervalBothOpened(15, 20, Opening.BOTH_OPENED)));
 		assertTrue(bothOpenedPivot.includes(IntervalFactory.getIntervalBothOpened(20, 25, Opening.BOTH_OPENED)));
