@@ -20,7 +20,6 @@ public class LeftOpened extends Interval {
 		return minimum2.isLessThan(value) && maximum2.isGreaterThan(value);
 	}
 	
-
 	@Override
 	public boolean includes(Interval interval) {
 		boolean minimumIncluded = this.includes(interval.minimum);
