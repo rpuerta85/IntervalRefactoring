@@ -57,7 +57,6 @@ public class IntervalTest {
 		assertFalse(IntervalFactory.getIntervalUnOpened(0, 10, Opening.UNOPENED).includes(13));
 
 	}
-
 	@Test
 	public void includeIntervalTest() {
 		
