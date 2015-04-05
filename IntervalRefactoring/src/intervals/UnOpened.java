@@ -1,25 +1,13 @@
 package intervals;
 
 import utils.ExactPoint;
-import utils.FromPoint;
-import utils.Point;
+
 
 public class UnOpened extends Interval{
-	//protected Point maximum2;
-	//protected Point minimum2;
 	
 	public UnOpened(double minimum, double maximum, Opening opening) {
 		super(new ExactPoint(minimum), new ExactPoint(maximum), opening);
-		//this.minimum2 = new ExactPoint(minimum);
-		//this.maximum2 = new ExactPoint(maximum);
 	}
-/**	public UnOpened(double minimum, double maximum, Opening opening) {
-		super(new ExactPoint(minimum), new ExactPoint(maximum), opening);
-		//this.minimum2 = new ExactPoint(minimum);
-		//this.maximum2 = new ExactPoint(maximum);
-	}*/
-
-	
 	@Override
 	public boolean includes(double value) {
 		//return minimum <= value && value <= maximum;
@@ -48,21 +36,6 @@ public class UnOpened extends Interval{
 			return false;
 		}
 	}
-
-	/*@Override
-	public boolean intersectsWith(Interval interval) {
-		if (minimum == interval.maximum) {
-			return interval.opening == Opening.LEFT_OPENED ||
-						interval.opening == Opening.UNOPENED;
-		}
-		if (maximum == interval.minimum) {
-				return interval.opening == Opening.RIGHT_OPENED ||
-						interval.opening == Opening.UNOPENED;
-		}
-		return this.includes(interval.minimum)
-				|| this.includes(interval.maximum);
-
-	}*/
 
 	@Override
 	public boolean intersectsWithMinimunEqualsMaximumImplementation(

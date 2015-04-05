@@ -5,19 +5,9 @@ import utils.FromPoint;
 import utils.Point;
 
 public class RightOpened extends Interval {
-	//protected Point maximum2;
-	//protected Point minimum2;
-	/*public RightOpened(double minimum, double maximum, Opening opening) {
-		super(new ExactPoint(minimum),new FromPoint(maximum), opening);
-		//this.minimum2 = new ExactPoint(minimum);
-		//this.maximum2 = new FromPoint(maximum);
-	}*/
 	public RightOpened(double minimum, double maximum, Opening opening) {
 		super(new ExactPoint(minimum), new FromPoint(maximum), opening);
-		//this.minimum2 = new ExactPoint(minimum);
-		//this.maximum2 = new FromPoint(maximum);
-	}
-	
+	}	
 	
 	@Override
 	public boolean includes(double value) {
@@ -48,20 +38,6 @@ public class RightOpened extends Interval {
 			return false;
 		}
 	}
-
-	/*@Override
-	public boolean intersectsWith(Interval interval) {
-			if (minimum == interval.maximum) {
-				return interval.opening == Opening.LEFT_OPENED ||
-						interval.opening == Opening.UNOPENED;
-			}
-			if (maximum == interval.minimum) {
-					return false;
-				
-			}
-			return this.includes(interval.minimum)
-					|| this.includes(interval.maximum);
-		}*/
 
 	@Override
 	public boolean intersectsWithMinimunEqualsMaximumImplementation(

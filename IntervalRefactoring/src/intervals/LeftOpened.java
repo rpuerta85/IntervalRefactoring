@@ -6,13 +6,9 @@ import utils.Point;
 import utils.UntilPoint;
 
 public class LeftOpened extends Interval {
-	//protected Point maximum2;
-	//protected Point minimum2;
-	
+
 	public LeftOpened(double minimum, double maximum, Opening opening) {
 		super(new FromPoint(minimum),new ExactPoint(maximum), opening);
-		//this.minimum2 = new FromPoint(minimum);
-		//this.maximum2 = new ExactPoint(maximum);
 	}
 
 	@Override
@@ -43,21 +39,6 @@ public class LeftOpened extends Interval {
 			return false;
 		}
 	}
-
-	/*@Override
-	public boolean intersectsWith(Interval interval) {
-		if (minimum == interval.maximum) {
-				return false;
-		}
-		if (maximum == interval.minimum) {
-			return interval.opening == Opening.RIGHT_OPENED ||
-					interval.opening == Opening.UNOPENED;
-			
-		}
-		return this.includes(interval.minimum)
-				|| this.includes(interval.maximum);
-	}*/
-
 	@Override
 	public boolean intersectsWithMinimunEqualsMaximumImplementation(
 			Interval interval) {

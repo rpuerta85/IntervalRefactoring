@@ -3,23 +3,12 @@ package intervals;
 import utils.Point;
 
 public abstract class Interval {
-	
-	//protected double minimum;
-	//protected double maximum;
-	
+
 	protected Point maximum2;
 	protected Point minimum2;
 	
 	protected Opening opening;
 
-	
-/*	Interval(double minimum, double maximum, Opening opening) {
-		this.minimum = minimum;
-		this.maximum = maximum;
-		this.opening = opening;
-		
-	}*/
-	
 	 Interval(Point minimum, Point maximum, Opening opening) {
 		this.minimum2 = minimum;
 		this.maximum2 = maximum;
@@ -31,25 +20,9 @@ public abstract class Interval {
 		return (maximum2.getValue() + minimum2.getValue()) / 2;
 	}
 
-	/*public boolean includes(double value) {
-		switch (opening) {
-		case BOTH_OPENED:
-			return minimum < value && value < maximum;
-		case LEFT_OPENED:
-			return minimum < value && value <= maximum;
-		case RIGHT_OPENED:
-			return minimum <= value && value < maximum;
-		case UNOPENED:
-			return minimum <= value && value <= maximum;
-		default:
-			assert false;
-			return false;
-		}
-	}*/
 	public boolean includes(double value) {
 		return minimum2.isLessThan(value) && maximum2.isGreaterThan(value);
 	}
-	//public abstract boolean includes(double value);
 	public abstract boolean includes(Interval interval);
 /*	public boolean includes(Interval interval) {
 		boolean minimumIncluded = this.includes(interval.minimum);
