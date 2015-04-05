@@ -34,7 +34,7 @@ public class LeftOpened extends Interval {
 		}
 	}
 
-	@Override
+	/*@Override
 	public boolean intersectsWith(Interval interval) {
 		if (minimum == interval.maximum) {
 				return false;
@@ -46,6 +46,19 @@ public class LeftOpened extends Interval {
 		}
 		return this.includes(interval.minimum)
 				|| this.includes(interval.maximum);
+	}*/
+
+	@Override
+	public boolean intersectsWithMinimunEqualsMaximumImplementation(
+			Interval interval) {
+		return false;
+	}
+
+	@Override
+	public boolean intersectsWithMaximumEqualsMinimumImplementation(
+			Interval interval) {
+		return interval.opening == Opening.RIGHT_OPENED ||
+				interval.opening == Opening.UNOPENED;
 	}
 
 }

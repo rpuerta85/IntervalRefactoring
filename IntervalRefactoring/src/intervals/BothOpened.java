@@ -36,6 +36,18 @@ public class BothOpened extends Interval{
 		}
 
 	@Override
+	public boolean intersectsWithMinimunEqualsMaximumImplementation(
+			Interval interval) {// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean intersectsWithMaximumEqualsMinimumImplementation(
+			Interval interval) {
+		return false;
+	}
+
+	/*@Override
 	public boolean intersectsWith(Interval interval) {
 		if (minimum == interval.maximum) {
 				return false;
@@ -46,7 +58,7 @@ public class BothOpened extends Interval{
 		}
 		return this.includes(interval.minimum)
 				|| this.includes(interval.maximum);
-	}
+	}*/
 	
 
 }
