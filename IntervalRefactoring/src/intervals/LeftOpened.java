@@ -23,8 +23,9 @@ public class LeftOpened extends Interval {
 		boolean maximumIncluded = this.includes(interval.maximum2.getValue());
 		switch (interval.opening) {
 		case BOTH_OPENED:
-			return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
-					&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
+			/*return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
+					&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());*/
+			return includesBothOpened(interval);
 		case LEFT_OPENED:
 			return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
 					&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());

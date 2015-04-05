@@ -9,15 +9,18 @@ public class BothOpened extends Interval{
 	public BothOpened(double minimum, double maximum, Opening opening) {
 		super(new FromPoint(minimum), new UntilPoint(maximum), opening);
 	}
+	// hay que hacer doble despacho creo para los que difieren
+
 	
 	@Override
-	public boolean includes(Interval interval) {
+	public boolean includes(Interval interval) {// hay que hacer doble despacho creo
 			boolean minimumIncluded = this.includes(interval.minimum2.getValue());
 			boolean maximumIncluded = this.includes(interval.maximum2.getValue());
 			switch (interval.opening) {
 				case BOTH_OPENED:
-					return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
-							&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
+					/*return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
+							&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());*/
+					return includesBothOpened(interval);
 				case LEFT_OPENED:
 					return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
 							&& (maximumIncluded);
