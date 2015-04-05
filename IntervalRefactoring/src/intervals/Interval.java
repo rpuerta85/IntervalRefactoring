@@ -151,6 +151,7 @@ public abstract class Interval {
 			|| this.includes(interval.maximum2.getValue());
 		}
 	
+	
 	public abstract boolean intersectsWithMinimunEqualsMaximumImplementation(Interval interval);
 	public abstract boolean intersectsWithMaximumEqualsMinimumImplementation(Interval interval);
 
