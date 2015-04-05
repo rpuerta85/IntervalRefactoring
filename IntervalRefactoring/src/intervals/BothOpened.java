@@ -6,8 +6,8 @@ import utils.UntilPoint;
 
 
 public class BothOpened extends Interval{
-	protected UntilPoint maximum2;
-	protected FromPoint minimum2;
+	//protected Point maximum2;
+	//protected Point minimum2;
 	
 	public BothOpened(double minimum, double maximum, Opening opening) {
 		super(minimum, maximum, opening);

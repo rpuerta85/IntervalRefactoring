@@ -6,8 +6,9 @@ public abstract class Interval {
 	
 	protected double minimum;
 	protected double maximum;
-	//protected Point minimum;
-	//protected Point maximum;
+	
+	protected Point maximum2;
+	protected Point minimum2;
 	
 	protected Opening opening;
 
@@ -39,7 +40,10 @@ public abstract class Interval {
 			return false;
 		}
 	}*/
-	public abstract boolean includes(double value);
+	public boolean includes(double value) {
+		return minimum2.isLessThan(value) && maximum2.isGreaterThan(value);
+	}
+	//public abstract boolean includes(double value);
 	public abstract boolean includes(Interval interval);
 /*	public boolean includes(Interval interval) {
 		boolean minimumIncluded = this.includes(interval.minimum);

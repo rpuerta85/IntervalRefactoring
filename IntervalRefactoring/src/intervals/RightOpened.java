@@ -2,22 +2,23 @@ package intervals;
 
 import utils.ExactPoint;
 import utils.FromPoint;
+import utils.Point;
 
 public class RightOpened extends Interval {
-	protected FromPoint maximum2;
-	protected ExactPoint minimum2;
+	//protected Point maximum2;
+	//protected Point minimum2;
 	public RightOpened(double minimum, double maximum, Opening opening) {
 		super(minimum, maximum, opening);
 		this.minimum2 = new ExactPoint(minimum);
 		this.maximum2 = new FromPoint(maximum);
 	}
 
-	@Override
+	/*@Override
 	public boolean includes(double value) {
 		//return minimum <= value && value < maximum;
 		return minimum2.isLessThan(value) && maximum2.isGreaterThan(value);
 
-	}
+	}*/
 
 	@Override
 	public boolean includes(Interval interval) {
