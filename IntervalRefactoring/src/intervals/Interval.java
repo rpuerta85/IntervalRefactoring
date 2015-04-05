@@ -2,8 +2,8 @@ package intervals;
 
 public abstract class Interval {
 	
-	private double minimum;
-	private double maximum;
+	protected double minimum;
+	protected double maximum;
 	private Opening opening;
 
 	 Interval(double minimum, double maximum, Opening opening) {
