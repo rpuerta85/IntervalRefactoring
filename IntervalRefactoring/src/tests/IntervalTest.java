@@ -9,6 +9,7 @@ import org.junit.Test;
 
 public class IntervalTest {
 
+	
 	@Test
 	public void midPointTest() {
 		assertEquals(5, IntervalFactory.getInterval(0, 10, Opening.BOTH_OPENED).midPoint(), 0.0);
