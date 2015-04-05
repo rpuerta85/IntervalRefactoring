@@ -113,7 +113,7 @@ public abstract class Interval {
 			return false;
 		}
 	}*/
-
+	
 	public boolean intersectsWith(Interval interval) {
 		if (minimum == interval.maximum) {
 			switch (opening) {
