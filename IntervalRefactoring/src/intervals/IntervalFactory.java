@@ -3,7 +3,7 @@ package intervals;
 
 public class IntervalFactory {
 
-	public static Interval getInterval(double minimum, double maximum, Opening opening) {
+	/*public static Interval getInterval(double minimum, double maximum, Opening opening) {
 		switch (opening) {
 		case BOTH_OPENED:
 			return new BothOpened(minimum, maximum, opening);
@@ -17,7 +17,7 @@ public class IntervalFactory {
 			throw new IllegalArgumentException("Incorrect type interval value");
 			
 		}
-	}
+	}*/
 	public static Interval getIntervalBothOpened(double minimum, double maximum, Opening opening) {
 		return new BothOpened(minimum, maximum, opening);
 	}

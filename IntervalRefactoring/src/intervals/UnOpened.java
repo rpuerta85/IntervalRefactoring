@@ -9,9 +9,9 @@ public class UnOpened extends Interval{
 	//protected Point minimum2;
 	
 	public UnOpened(double minimum, double maximum, Opening opening) {
-		super(minimum, maximum, opening);
-		this.minimum2 = new ExactPoint(minimum);
-		this.maximum2 = new ExactPoint(maximum);
+		super(new ExactPoint(minimum), new ExactPoint(maximum), opening);
+		//this.minimum2 = new ExactPoint(minimum);
+		//this.maximum2 = new ExactPoint(maximum);
 	}
 
 	
@@ -23,8 +23,8 @@ public class UnOpened extends Interval{
 
 	@Override
 	public boolean includes(Interval interval) {
-		boolean minimumIncluded = this.includes(interval.minimum);
-		boolean maximumIncluded = this.includes(interval.maximum);
+		boolean minimumIncluded = this.includes(interval.minimum.getValue());
+		boolean maximumIncluded = this.includes(interval.maximum.getValue());
 		switch (interval.opening) {
 		case BOTH_OPENED:
 			return (minimumIncluded || minimum == interval.minimum)

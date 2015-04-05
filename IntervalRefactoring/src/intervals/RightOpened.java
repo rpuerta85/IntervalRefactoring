@@ -8,9 +8,9 @@ public class RightOpened extends Interval {
 	//protected Point maximum2;
 	//protected Point minimum2;
 	public RightOpened(double minimum, double maximum, Opening opening) {
-		super(minimum, maximum, opening);
-		this.minimum2 = new ExactPoint(minimum);
-		this.maximum2 = new FromPoint(maximum);
+		super(new ExactPoint(minimum),new FromPoint(maximum), opening);
+		//this.minimum2 = new ExactPoint(minimum);
+		//this.maximum2 = new FromPoint(maximum);
 	}
 
 	/*@Override
@@ -22,8 +22,8 @@ public class RightOpened extends Interval {
 
 	@Override
 	public boolean includes(Interval interval) {
-		boolean minimumIncluded = this.includes(interval.minimum);
-		boolean maximumIncluded = this.includes(interval.maximum);
+		boolean minimumIncluded = this.includes(interval.minimum.getValue());
+		boolean maximumIncluded = this.includes(interval.maximum.getValue());
 		switch (interval.opening) {
 		case BOTH_OPENED:
 			return (minimumIncluded || minimum == interval.minimum)

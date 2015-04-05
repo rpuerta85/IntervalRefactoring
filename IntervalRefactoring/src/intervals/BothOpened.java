@@ -10,21 +10,21 @@ public class BothOpened extends Interval{
 	//protected Point minimum2;
 	
 	public BothOpened(double minimum, double maximum, Opening opening) {
-		super(minimum, maximum, opening);
-		this.maximum2 = new UntilPoint(maximum);
-		this.minimum2 = new FromPoint(minimum);
+		super(new FromPoint(minimum), new UntilPoint(maximum), opening);
+		//this.maximum2 = new UntilPoint(maximum);
+		//this.minimum2 = new FromPoint(minimum);
 	}
 
 	
-	@Override
+	/*@Override
 	public boolean includes(double value) {
 		return minimum2.isLessThan(value) && maximum2.isGreaterThan(value);
 	}
-
+*/
 	@Override
 	public boolean includes(Interval interval) {
-			boolean minimumIncluded = this.includes(interval.minimum);
-			boolean maximumIncluded = this.includes(interval.maximum);
+			boolean minimumIncluded = this.includes(interval.minimum.getValue());
+			boolean maximumIncluded = this.includes(interval.maximum.getValue());
 			switch (interval.opening) {
 				case BOTH_OPENED:
 					return (minimumIncluded || minimum == interval.minimum)
