@@ -17,7 +17,7 @@ public class LeftOpened extends Interval {
 	@Override
 	public boolean includes(double value) {
 		//return minimum < value && value <= maximum;
-		return minimum2.isLessThan(value) && maximum2.isLessThan(value);
+		return minimum2.isLessThan(value) && maximum2.isGreaterThan(value);
 	}
 	
 
