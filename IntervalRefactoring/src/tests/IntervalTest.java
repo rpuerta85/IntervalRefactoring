@@ -12,25 +12,26 @@ public class IntervalTest {
 	
 	@Test
 	public void midPointTest() {
-		assertEquals(5, IntervalFactory.getInterval(0, 10, Opening.BOTH_OPENED).midPoint(), 0.0);
-		assertEquals(5, IntervalFactory.getInterval(0, 10, Opening.LEFT_OPENED).midPoint(), 0.0);
-		assertEquals(5, IntervalFactory.getInterval(0, 10, Opening.RIGHT_OPENED).midPoint(), 0.0);
-		assertEquals(5, IntervalFactory.getInterval(0, 10, Opening.UNOPENED).midPoint(), 0.0);
+		assertEquals(5, IntervalFactory.getIntervalBothOpened(0, 10, Opening.BOTH_OPENED).midPoint(), 0.0);
+		assertEquals(5, IntervalFactory.getIntervalLeftOpened(0, 10, Opening.LEFT_OPENED).midPoint(), 0.0);
+		assertEquals(5, IntervalFactory.getIntervalRightOpened(0, 10, Opening.RIGHT_OPENED).midPoint(), 0.0);
+		assertEquals(5, IntervalFactory.getIntervalUnOpened(0, 10, Opening.UNOPENED).midPoint(), 0.0);
 
-		assertEquals(0, IntervalFactory.getInterval(-10, 10, Opening.BOTH_OPENED).midPoint(), 0.0);
-		assertEquals(0, IntervalFactory.getInterval(-10, 10, Opening.LEFT_OPENED).midPoint(), 0.0);
-		assertEquals(0, IntervalFactory.getInterval(-10, 10, Opening.RIGHT_OPENED).midPoint(), 0.0);
-		assertEquals(0, IntervalFactory.getInterval(-10, 10, Opening.UNOPENED).midPoint(), 0.0);
+		assertEquals(0, IntervalFactory.getIntervalBothOpened(-10, 10, Opening.BOTH_OPENED).midPoint(), 0.0);
+		assertEquals(0, IntervalFactory.getIntervalLeftOpened(-10, 10, Opening.LEFT_OPENED).midPoint(), 0.0);
+		assertEquals(0, IntervalFactory.getIntervalRightOpened(-10, 10, Opening.RIGHT_OPENED).midPoint(), 0.0);
+		assertEquals(0, IntervalFactory.getIntervalUnOpened(-10, 10, Opening.UNOPENED).midPoint(), 0.0);
 		
-		assertEquals(-10, IntervalFactory.getInterval(-15, -5, Opening.BOTH_OPENED).midPoint(), 0.0);
-		assertEquals(-10, IntervalFactory.getInterval(-15, -5, Opening.LEFT_OPENED).midPoint(), 0.0);
-		assertEquals(-10, IntervalFactory.getInterval(-15, -5, Opening.RIGHT_OPENED).midPoint(), 0.0);
-		assertEquals(-10, IntervalFactory.getInterval(-15, -5, Opening.UNOPENED).midPoint(), 0.0);
+		assertEquals(-10, IntervalFactory.getIntervalBothOpened(-15, -5, Opening.BOTH_OPENED).midPoint(), 0.0);
+		assertEquals(-10, IntervalFactory.getIntervalLeftOpened(-15, -5, Opening.LEFT_OPENED).midPoint(), 0.0);
+		assertEquals(-10, IntervalFactory.getIntervalRightOpened(-15, -5, Opening.RIGHT_OPENED).midPoint(), 0.0);
+		assertEquals(-10, IntervalFactory.getIntervalUnOpened(-15, -5, Opening.UNOPENED).midPoint(), 0.0);
 	}
 
 	@Test
 	public void includeValueTest() {
 		assertFalse(IntervalFactory.getIntervalBothOpened(0, 10, Opening.BOTH_OPENED).includes(-3));
+
 		assertFalse(IntervalFactory.getIntervalLeftOpened(0, 10, Opening.LEFT_OPENED).includes(-3));
 		assertFalse(IntervalFactory.getIntervalRightOpened(0, 10, Opening.RIGHT_OPENED).includes(-3));
 		assertFalse(IntervalFactory.getIntervalUnOpened(0, 10, Opening.UNOPENED).includes(-3));

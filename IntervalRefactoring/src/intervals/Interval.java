@@ -7,13 +7,13 @@ public abstract class Interval {
 	//protected double minimum;
 	//protected double maximum;
 	
-	protected Point maximum;
-	protected Point minimum;
+	protected Point maximum2;
+	protected Point minimum2;
 	
 	protected Opening opening;
 
 	
-	/* Interval(double minimum, double maximum, Opening opening) {
+/*	Interval(double minimum, double maximum, Opening opening) {
 		this.minimum = minimum;
 		this.maximum = maximum;
 		this.opening = opening;
@@ -21,14 +21,14 @@ public abstract class Interval {
 	}*/
 	
 	 Interval(Point minimum, Point maximum, Opening opening) {
-		this.minimum = minimum;
-		this.maximum = maximum;
+		this.minimum2 = minimum;
+		this.maximum2 = maximum;
 		this.opening = opening;
 		
 	}
 	
 	public double midPoint() {
-		return (maximum.getValue() + minimum.getValue()) / 2;
+		return (maximum2.getValue() + minimum2.getValue()) / 2;
 	}
 
 	/*public boolean includes(double value) {
@@ -47,7 +47,7 @@ public abstract class Interval {
 		}
 	}*/
 	public boolean includes(double value) {
-		return minimum.isLessThan(value) && maximum.isGreaterThan(value);
+		return minimum2.isLessThan(value) && maximum2.isGreaterThan(value);
 	}
 	//public abstract boolean includes(double value);
 	public abstract boolean includes(Interval interval);
@@ -167,15 +167,15 @@ public abstract class Interval {
 
 	
 	public boolean intersectsWith(Interval interval){
-		if (minimum.getValue() == interval.maximum.getValue()) {
+		if (minimum2.getValue() == interval.maximum2.getValue()) {
 			return intersectsWithMinimunEqualsMaximumImplementation(interval);
 		}
-		if (maximum.getValue() == interval.minimum.getValue()) {
+		if (maximum2.getValue() == interval.minimum2.getValue()) {
 			return intersectsWithMaximumEqualsMinimumImplementation(interval);
 		
 		}
-		return this.includes(interval.minimum.getValue())
-			|| this.includes(interval.maximum.getValue());
+		return this.includes(interval.minimum2.getValue())
+			|| this.includes(interval.maximum2.getValue());
 		}
 	
 	public abstract boolean intersectsWithMinimunEqualsMaximumImplementation(Interval interval);

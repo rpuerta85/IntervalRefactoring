@@ -10,34 +10,34 @@ public class LeftOpened extends Interval {
 	//protected Point minimum2;
 	
 	public LeftOpened(double minimum, double maximum, Opening opening) {
-		super(new FromPoint(minimum), new ExactPoint(maximum), opening);
+		super(new FromPoint(minimum),new ExactPoint(maximum), opening);
 		//this.minimum2 = new FromPoint(minimum);
 		//this.maximum2 = new ExactPoint(maximum);
 	}
 
-/*	@Override
+	@Override
 	public boolean includes(double value) {
 		//return minimum < value && value <= maximum;
 		return minimum2.isLessThan(value) && maximum2.isGreaterThan(value);
-	}*/
+	}
 	
 	@Override
 	public boolean includes(Interval interval) {
-		boolean minimumIncluded = this.includes(interval.minimum.getValue());
-		boolean maximumIncluded = this.includes(interval.maximum.getValue());
+		boolean minimumIncluded = this.includes(interval.minimum2.getValue());
+		boolean maximumIncluded = this.includes(interval.maximum2.getValue());
 		switch (interval.opening) {
 		case BOTH_OPENED:
-			return (minimumIncluded || minimum == interval.minimum)
-					&& (maximumIncluded || maximum == interval.maximum);
+			return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
+					&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
 		case LEFT_OPENED:
-			return (minimumIncluded || minimum == interval.minimum)
-					&& (maximumIncluded || maximum == interval.maximum);
+			return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
+					&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
 		case RIGHT_OPENED:
 			return (minimumIncluded)
-					&& (maximumIncluded || maximum == interval.maximum);
+					&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
 		case UNOPENED:
 			return (minimumIncluded)
-					&& (maximumIncluded || maximum == interval.maximum);
+					&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
 		default:
 			assert false;
 			return false;

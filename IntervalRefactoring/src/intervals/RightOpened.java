@@ -7,35 +7,41 @@ import utils.Point;
 public class RightOpened extends Interval {
 	//protected Point maximum2;
 	//protected Point minimum2;
-	public RightOpened(double minimum, double maximum, Opening opening) {
+	/*public RightOpened(double minimum, double maximum, Opening opening) {
 		super(new ExactPoint(minimum),new FromPoint(maximum), opening);
 		//this.minimum2 = new ExactPoint(minimum);
 		//this.maximum2 = new FromPoint(maximum);
+	}*/
+	public RightOpened(double minimum, double maximum, Opening opening) {
+		super(new ExactPoint(minimum), new FromPoint(maximum), opening);
+		//this.minimum2 = new ExactPoint(minimum);
+		//this.maximum2 = new FromPoint(maximum);
 	}
-
-	/*@Override
+	
+	
+	@Override
 	public boolean includes(double value) {
 		//return minimum <= value && value < maximum;
 		return minimum2.isLessThan(value) && maximum2.isGreaterThan(value);
 
-	}*/
+	}
 
 	@Override
 	public boolean includes(Interval interval) {
-		boolean minimumIncluded = this.includes(interval.minimum.getValue());
-		boolean maximumIncluded = this.includes(interval.maximum.getValue());
+		boolean minimumIncluded = this.includes(interval.minimum2.getValue());
+		boolean maximumIncluded = this.includes(interval.maximum2.getValue());
 		switch (interval.opening) {
 		case BOTH_OPENED:
-			return (minimumIncluded || minimum == interval.minimum)
-					&& (maximumIncluded || maximum == interval.maximum);
+			return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
+					&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
 		case LEFT_OPENED:
-			return (minimumIncluded || minimum == interval.minimum)
+			return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
 					&& (maximumIncluded);
 		case RIGHT_OPENED:
-			return (minimumIncluded || minimum == interval.minimum)
-					&& (maximumIncluded || maximum == interval.maximum);
+			return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
+					&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
 		case UNOPENED:
-			return (minimumIncluded || minimum == interval.minimum)
+			return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
 					&& (maximumIncluded);
 		default:
 			assert false;
