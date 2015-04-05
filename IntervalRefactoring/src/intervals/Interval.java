@@ -18,7 +18,7 @@ public class Interval {
 		this.opening = opening;
 	}
 	
-	public Interval getInstance(double minimum, double maximum, Opening opening) {
+	public static Interval getInstance(double minimum, double maximum, Opening opening) {
 		return new Interval(minimum, maximum, opening);
 		
 	}
