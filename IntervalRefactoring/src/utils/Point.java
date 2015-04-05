@@ -1,20 +1,22 @@
 package utils;
 
-public class Point {
+public abstract class Point {
 	protected double value;
 	
 	public Point(double value) {
 		this.value = value;
 	}
 	
-	public boolean isLessThan(double value) {
-		return this.value < value;
+	public abstract boolean isLessThan(double value);
+	
+	public abstract boolean isGreaterThan(double value);
+
+	public double getValue() {
+		return value;
 	}
-	public boolean isLessOrEqualsThan(double value) {
-		return this.value <= value;
+
+	public void setValue(double value) {
+		this.value = value;
 	}
 	
-	public boolean isGreaterThan(double value) {
-		return this.value > value;
-	}
 }
