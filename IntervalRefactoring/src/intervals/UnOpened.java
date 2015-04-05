@@ -13,6 +13,7 @@ public class UnOpened extends Interval{
 		this.maximum2 = new ExactPoint(maximum);
 	}
 
+	
 	@Override
 	public boolean includes(double value) {
 		//return minimum <= value && value <= maximum;
