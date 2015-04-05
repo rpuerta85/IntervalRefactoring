@@ -16,6 +16,7 @@ public class IntervalTest {
 		assertEquals(5, IntervalFactory.getInterval(0, 10, Opening.RIGHT_OPENED).midPoint(), 0.0);
 		assertEquals(5, IntervalFactory.getInterval(0, 10, Opening.UNOPENED).midPoint(), 0.0);
 
+		
 		assertEquals(0, IntervalFactory.getInterval(-10, 10, Opening.BOTH_OPENED).midPoint(), 0.0);
 		assertEquals(0, IntervalFactory.getInterval(-10, 10, Opening.LEFT_OPENED).midPoint(), 0.0);
 		assertEquals(0, IntervalFactory.getInterval(-10, 10, Opening.RIGHT_OPENED).midPoint(), 0.0);
