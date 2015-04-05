@@ -162,7 +162,6 @@ public abstract class Interval {
 	
 	public abstract boolean intersectsWithMinimunEqualsMaximumImplementation(Interval interval);
 	public abstract boolean intersectsWithMaximumEqualsMinimumImplementation(Interval interval);
-	//public abstract boolean intersectsWithMaximunEqualsMeximumImplementation(Interval interval);
 
 	@Override
 	public String toString() {
