@@ -197,6 +197,7 @@ public class IntervalTest {
 
 	}
 
+	
 	@Test
 	public void hasIntersectionTest() {
 
