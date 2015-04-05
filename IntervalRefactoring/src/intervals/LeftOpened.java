@@ -6,4 +6,9 @@ public class LeftOpened extends Interval {
 		super(maximum, maximum, opening);
 	}
 
+	@Override
+	public boolean includes(double value) {
+		return minimum < value && value <= maximum;
+	}
+
 }
