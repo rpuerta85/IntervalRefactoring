@@ -33,7 +33,6 @@ public abstract class Interval {
 	}*/
 	public abstract boolean includes(double value);
 	
-	
 	public boolean includes(Interval interval) {
 		boolean minimumIncluded = this.includes(interval.minimum);
 		boolean maximumIncluded = this.includes(interval.maximum);
