@@ -30,28 +30,27 @@ public class IntervalTest {
 	@Test
 	public void includeValueTest() {
 		assertFalse(IntervalFactory.getIntervalBothOpened(0, 10, Opening.BOTH_OPENED).includes(-3));
-		assertFalse(IntervalFactory.getInterval(0, 10, Opening.LEFT_OPENED).includes(-3));
+		assertFalse(IntervalFactory.getIntervalLeftOpened(0, 10, Opening.LEFT_OPENED).includes(-3));
 		assertFalse(IntervalFactory.getInterval(0, 10, Opening.RIGHT_OPENED).includes(-3));
 		assertFalse(IntervalFactory.getInterval(0, 10, Opening.UNOPENED).includes(-3));
 
-		
 		assertFalse(IntervalFactory.getIntervalBothOpened(0, 10, Opening.BOTH_OPENED).includes(0));
-		assertFalse(IntervalFactory.getInterval(0, 10, Opening.LEFT_OPENED).includes(0));
+		assertFalse(IntervalFactory.getIntervalLeftOpened(0, 10, Opening.LEFT_OPENED).includes(0));
 		assertTrue(IntervalFactory.getInterval(0, 10, Opening.RIGHT_OPENED).includes(0));
 		assertTrue(IntervalFactory.getInterval(0, 10, Opening.UNOPENED).includes(0));
 
 		assertTrue(IntervalFactory.getIntervalBothOpened(0, 10, Opening.BOTH_OPENED).includes(5));
-		assertTrue(IntervalFactory.getInterval(0, 10, Opening.LEFT_OPENED).includes(5));
+		assertTrue(IntervalFactory.getIntervalLeftOpened(0, 10, Opening.LEFT_OPENED).includes(5));
 		assertTrue(IntervalFactory.getInterval(0, 10, Opening.RIGHT_OPENED).includes(5));
 		assertTrue(IntervalFactory.getInterval(0, 10, Opening.UNOPENED).includes(5));
 
 		assertFalse(IntervalFactory.getIntervalBothOpened(0, 10, Opening.BOTH_OPENED).includes(10));
-		assertTrue(IntervalFactory.getInterval(0, 10, Opening.LEFT_OPENED).includes(10));
+		assertTrue(IntervalFactory.getIntervalLeftOpened(0, 10, Opening.LEFT_OPENED).includes(10));
 		assertFalse(IntervalFactory.getInterval(0, 10, Opening.RIGHT_OPENED).includes(10));
 		assertTrue(IntervalFactory.getInterval(0, 10, Opening.UNOPENED).includes(10));
 
 		assertFalse(IntervalFactory.getIntervalBothOpened(0, 10, Opening.BOTH_OPENED).includes(13));
-		assertFalse(IntervalFactory.getInterval(0, 10, Opening.LEFT_OPENED).includes(13));
+		assertFalse(IntervalFactory.getIntervalLeftOpened(0, 10, Opening.LEFT_OPENED).includes(13));
 		assertFalse(IntervalFactory.getInterval(0, 10, Opening.RIGHT_OPENED).includes(13));
 		assertFalse(IntervalFactory.getInterval(0, 10, Opening.UNOPENED).includes(13));
 
