@@ -1,10 +1,16 @@
 package intervals;
 
+import utils.ExactPoint;
+import utils.FromPoint;
+
 public class UnOpened extends Interval{
-	//protected
+	protected ExactPoint maximum2;
+	protected ExactPoint minimum2;
 	
 	public UnOpened(double minimum, double maximum, Opening opening) {
 		super(minimum, maximum, opening);
+		this.minimum2 = new ExactPoint(minimum);
+		this.maximum2 = new ExactPoint(maximum);
 	}
 
 	
