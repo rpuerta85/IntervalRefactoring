@@ -148,8 +148,21 @@ public abstract class Interval {
 	}*/
 
 	
-	public abstract boolean intersectsWith(Interval interval);
+	public boolean intersectsWith(Interval interval){
+		if (minimum == interval.maximum) {
+			return intersectsWithMinimunEqualsMeximumImplementation(interval);
+		}
+		if (maximum == interval.minimum) {
+			return false;
+		
+		}
+		return this.includes(interval.minimum)
+			|| this.includes(interval.maximum);
+		}
 	
+	public abstract boolean intersectsWithMinimunEqualsMeximumImplementation(Interval interval);
+	//public abstract boolean intersectsWithMaximunEqualsMeximumImplementation(Interval interval);
+
 	@Override
 	public String toString() {
 		// TODO
