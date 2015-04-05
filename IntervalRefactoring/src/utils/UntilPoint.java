@@ -9,12 +9,13 @@ public class UntilPoint extends Point {
 
 	@Override
 	public boolean isLessThan(double value) {
-		return value < this.value;
+		//return value < this.value;
+		return this.value < value;
 	}
 
 	@Override
 	public boolean isGreaterThan(double value) {
-		return value > this.value;
+		return this.value > value;
 	}
 
 }
