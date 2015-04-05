@@ -33,6 +33,21 @@ public class UnOpened extends Interval{
 			return false;
 		}
 	}
+
+	@Override
+	public boolean intersectsWith(Interval interval) {
+		if (minimum == interval.maximum) {
+			return interval.opening == Opening.LEFT_OPENED ||
+						interval.opening == Opening.UNOPENED;
+		}
+		if (maximum == interval.minimum) {
+				return interval.opening == Opening.RIGHT_OPENED ||
+						interval.opening == Opening.UNOPENED;
+		}
+		return this.includes(interval.minimum)
+				|| this.includes(interval.maximum);
+
+	}
 	
 	
 	
