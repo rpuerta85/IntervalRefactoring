@@ -24,7 +24,7 @@ public class UnOpened extends Interval{
 	public boolean includes(UnOpened interval) {
 		return interval.amIIncludeInInterval(this);
 	}
-	private boolean amIIncludeInInterval(UnOpened interval) {
+	public boolean amIIncludeInInterval(UnOpened interval) {
 		boolean minimumIncluded = interval.includes(minimum2.getValue());
 		boolean maximumIncluded = interval.includes(maximum2.getValue());
 		return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
@@ -34,29 +34,35 @@ public class UnOpened extends Interval{
 		return interval.amIIncludeInInterval(this);
 	}
 	
+	
 	@Override
 	public boolean includes(Interval interval) {
-		boolean minimumIncluded = this.includes(interval.minimum2.getValue());
-		boolean maximumIncluded = this.includes(interval.maximum2.getValue());
-		switch (interval.opening) {
-		case BOTH_OPENED:
-			/*return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
-					&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());*/
-			return includesBothOpened(interval);
-		case LEFT_OPENED:
-			return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
-					&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
-		case RIGHT_OPENED:
-			return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
-					&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
-		case UNOPENED:
-			return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
-					&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
-		default:
-			assert false;
-			return false;
-		}
+		return interval.amIIncludeInInterval(this);
 	}
+	
+//	@Override
+//	public boolean includes(Interval interval) {
+//		boolean minimumIncluded = this.includes(interval.minimum2.getValue());
+//		boolean maximumIncluded = this.includes(interval.maximum2.getValue());
+//		switch (interval.opening) {
+//		case BOTH_OPENED:
+//			/*return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
+//					&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());*/
+//			return includesBothOpened(interval);
+//		case LEFT_OPENED:
+//			return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
+//					&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
+//		case RIGHT_OPENED:
+//			return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
+//					&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
+//		case UNOPENED:
+//			return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
+//					&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
+//		default:
+//			assert false;
+//			return false;
+//		}
+//	}
 
 	@Override
 	public boolean intersectsWithMinimunEqualsMaximumImplementation(

@@ -29,6 +29,7 @@ public abstract class Interval {
 	public abstract boolean amIIncludeInInterval(BothOpened bothOpened);
 	public  abstract boolean amIIncludeInInterval(LeftOpened leftOpened) ;
 	public abstract boolean amIIncludeInInterval(RightOpened rightOpened);
+	public abstract boolean amIIncludeInInterval(UnOpened unOpened);
 
 	
 	protected boolean includesBothOpened(Interval interval) {
