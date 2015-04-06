@@ -29,7 +29,6 @@ public class RightOpened extends Interval {
 		return interval.amIIncludeInInterval(this);
 	}
 	
-	
 	public boolean amIIncludeInInterval(RightOpened interval) {
 		boolean minimumIncluded = interval.includes(minimum2.getValue());
 		boolean maximumIncluded = interval.includes(maximum2.getValue());
