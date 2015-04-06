@@ -15,6 +15,7 @@ public class UnOpened extends Interval{
 	}
 
 	
+	
 	public boolean includes(BothOpened interval) {
 		return interval.amIIncludeInInterval(this);
 	}
