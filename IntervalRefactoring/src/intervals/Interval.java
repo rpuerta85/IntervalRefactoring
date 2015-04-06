@@ -26,11 +26,12 @@ public abstract class Interval {
 	}
 	public abstract boolean includes(Interval interval);
 	//public abstract boolean includes(LeftOpened interval) ;
+	
 	public abstract boolean amIIncludeInInterval(BothOpened bothOpened);
-	public  abstract boolean amIIncludeInInterval(LeftOpened leftOpened) ;
+	public abstract boolean amIIncludeInInterval(LeftOpened leftOpened) ;
 	public abstract boolean amIIncludeInInterval(RightOpened rightOpened);
 	public abstract boolean amIIncludeInInterval(UnOpened unOpened);
-
+	
 	
 	protected boolean includesBothOpened(Interval interval) {
 		boolean minimumIncluded = this.includes(interval.minimum2.getValue());
@@ -38,123 +39,6 @@ public abstract class Interval {
 		return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
 				&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
 	}
-	
-	
-	
-/*	public boolean includes(Interval interval) {
-		boolean minimumIncluded = this.includes(interval.minimum);
-		boolean maximumIncluded = this.includes(interval.maximum);
-		switch (opening) {
-		case BOTH_OPENED:
-			switch (interval.opening) {
-			case BOTH_OPENED:
-				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
-			case LEFT_OPENED:
-				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded);
-			case RIGHT_OPENED:
-				return (minimumIncluded)
-						&& (maximumIncluded || maximum == interval.maximum);
-			case UNOPENED:
-				return (minimumIncluded) && (maximumIncluded);
-			default:
-				assert false;
-				return false;
-			}
-		case LEFT_OPENED:
-			switch (interval.opening) {
-			case BOTH_OPENED:
-				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
-			case LEFT_OPENED:
-				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
-			case RIGHT_OPENED:
-				return (minimumIncluded)
-						&& (maximumIncluded || maximum == interval.maximum);
-			case UNOPENED:
-				return (minimumIncluded)
-						&& (maximumIncluded || maximum == interval.maximum);
-			default:
-				assert false;
-				return false;
-			}
-		case RIGHT_OPENED:
-			switch (interval.opening) {
-			case BOTH_OPENED:
-				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
-			case LEFT_OPENED:
-				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded);
-			case RIGHT_OPENED:
-				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
-			case UNOPENED:
-				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded);
-			default:
-				assert false;
-				return false;
-			}
-		case UNOPENED:
-			switch (interval.opening) {
-			case BOTH_OPENED:
-				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
-			case LEFT_OPENED:
-				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
-			case RIGHT_OPENED:
-				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
-			case UNOPENED:
-				return (minimumIncluded || minimum == interval.minimum)
-						&& (maximumIncluded || maximum == interval.maximum);
-			default:
-				assert false;
-				return false;
-			}
-		default:
-			assert false;
-			return false;
-		}
-	}*/
-	
-	/*public boolean intersectsWith(Interval interval) {
-		if (minimum == interval.maximum) {
-			switch (opening) {
-			case BOTH_OPENED:
-			case LEFT_OPENED:
-				return false;
-			case RIGHT_OPENED:
-			case UNOPENED:
-				return interval.opening == Opening.LEFT_OPENED ||
-						interval.opening == Opening.UNOPENED;
-			default:
-				assert false;
-				return false;
-			}
-		}
-		if (maximum == interval.minimum) {
-			switch (opening) {
-			case BOTH_OPENED:
-			case RIGHT_OPENED:
-				return false;
-			case LEFT_OPENED:
-			case UNOPENED:
-				return interval.opening == Opening.RIGHT_OPENED ||
-						interval.opening == Opening.UNOPENED;
-			default:
-				assert false;
-				return false;
-			}
-		}
-		return this.includes(interval.minimum)
-				|| this.includes(interval.maximum);
-	}*/
-
 	
 	public boolean intersectsWith(Interval interval){
 		if (minimum2.getValue() == interval.maximum2.getValue()) {
