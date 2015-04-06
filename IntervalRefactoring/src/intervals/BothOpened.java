@@ -36,7 +36,7 @@ public class BothOpened extends Interval{
 							&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue())*/
 							includes((RightOpened)interval);
 				case UNOPENED:
-					return (minimumIncluded) && (maximumIncluded);
+					return /*(minimumIncluded) && (maximumIncluded)*/includes((UnOpened)interval);
 				default:
 					assert false;
 					return false;

@@ -51,6 +51,11 @@ public class UnOpened extends Interval{
 		return interval.opening == Opening.RIGHT_OPENED ||
 				interval.opening == Opening.UNOPENED;
 	}
+	public boolean amIIncludeInInterval(BothOpened interval) {
+		boolean minimumIncluded = interval.includes(minimum2.getValue());
+		boolean maximumIncluded = interval.includes(maximum2.getValue());
+		return  (minimumIncluded) && (maximumIncluded);
+	}
 
 	
 	
