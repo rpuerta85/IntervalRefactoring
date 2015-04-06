@@ -26,12 +26,15 @@ public abstract class Interval {
 	}
 	public abstract boolean includes(Interval interval);
 	
-	public boolean includesBothOpened(Interval interval) {
+	protected boolean includesBothOpened(Interval interval) {
 		boolean minimumIncluded = this.includes(interval.minimum2.getValue());
 		boolean maximumIncluded = this.includes(interval.maximum2.getValue());
 		return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
 				&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
 	}
+	
+	
+	
 /*	public boolean includes(Interval interval) {
 		boolean minimumIncluded = this.includes(interval.minimum);
 		boolean maximumIncluded = this.includes(interval.maximum);
