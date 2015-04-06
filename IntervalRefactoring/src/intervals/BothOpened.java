@@ -68,4 +68,10 @@ public class BothOpened extends Interval{
 	public boolean amIIncludeInInterval(LeftOpened interval) {
 		return interval.includesBothOpened(this);
 	}
+
+	public boolean amIIncludeInInterval(RightOpened interval) {
+		return interval.includesBothOpened(this);
+	}
+
+	
 }

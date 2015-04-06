@@ -84,6 +84,13 @@ public class LeftOpened extends Interval {
 				&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
 	}
 
+	public boolean amIIncludeInInterval(RightOpened interval) {
+		boolean minimumIncluded = interval.includes(minimum2.getValue());
+		boolean maximumIncluded = interval.includes(maximum2.getValue());
+		return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
+				&& (maximumIncluded);
+	}
+
 
 
 }
