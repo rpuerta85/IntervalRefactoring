@@ -18,7 +18,6 @@ public class BothOpened extends Interval{
 		return interval.amIIncludeInInterval(this);
 	}
 	
-	
 	@Override
 	public boolean includes(Interval interval) {
 			boolean minimumIncluded = this.includes(interval.minimum2.getValue());
