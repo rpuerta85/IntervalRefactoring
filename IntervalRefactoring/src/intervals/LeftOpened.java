@@ -17,6 +17,7 @@ public class LeftOpened extends Interval {
 		return minimum2.isLessThan(value) && maximum2.isGreaterThan(value);
 	}
 	
+	
 	public boolean amIIncludeInInterval(BothOpened interval) {
 		boolean minimumIncluded = interval.includes(minimum2.getValue());
 		boolean maximumIncluded = interval.includes(maximum2.getValue());
