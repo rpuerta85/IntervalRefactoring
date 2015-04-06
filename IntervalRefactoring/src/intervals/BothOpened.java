@@ -10,7 +10,6 @@ public class BothOpened extends Interval{
 		super(new FromPoint(minimum), new UntilPoint(maximum), opening);
 	}
 
-	
 	//Doble despacho
 	public boolean includes(LeftOpened interval) {
 		return interval.amIIncludeInInterval(this);
