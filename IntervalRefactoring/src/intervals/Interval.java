@@ -178,4 +178,6 @@ public abstract class Interval {
 		return false;
 	}
 
+	public abstract boolean amIIncludeInInterval(BothOpened bothOpened);
+
 }
