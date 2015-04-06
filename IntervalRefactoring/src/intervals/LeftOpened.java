@@ -24,6 +24,18 @@ public class LeftOpened extends Interval {
 				&& (maximumIncluded);
 	}
 	
+	
+	public boolean includes(BothOpened interval) {
+		return interval.amIIncludeInInterval(this);
+	}
+	public boolean includes(RightOpened interval) {
+		return interval.amIIncludeInInterval(this);
+	}
+	public boolean includes(UnOpened interval) {
+		return interval.amIIncludeInInterval(this);
+	}
+	
+	
 	@Override
 	public boolean includes(Interval interval) {
 		boolean minimumIncluded = this.includes(interval.minimum2.getValue());

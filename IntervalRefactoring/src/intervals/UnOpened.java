@@ -56,6 +56,10 @@ public class UnOpened extends Interval{
 		boolean maximumIncluded = interval.includes(maximum2.getValue());
 		return  (minimumIncluded) && (maximumIncluded);
 	}
+	public boolean amIIncludeInInterval(LeftOpened interval) {
+		return interval.includesBothOpened(this);
+
+	}
 
 	
 	
