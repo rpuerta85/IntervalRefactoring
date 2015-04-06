@@ -60,5 +60,7 @@ public class LeftOpened extends Interval {
 				interval.opening == Opening.UNOPENED;
 	}
 
+
+
 }
 

@@ -51,7 +51,7 @@ public class UnOpened extends Interval{
 		return interval.opening == Opening.RIGHT_OPENED ||
 				interval.opening == Opening.UNOPENED;
 	}
-	
+
 	
 	
 

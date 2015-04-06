@@ -14,6 +14,9 @@ public class BothOpened extends Interval{
 	public boolean includes(LeftOpened interval) {
 		return interval.amIIncludeInInterval(this);
 	}
+	public boolean includes(RightOpened interval) {
+		return interval.amIIncludeInInterval(this);
+	}
 	
 	@Override
 	public boolean includes(Interval interval) {
@@ -25,8 +28,9 @@ public class BothOpened extends Interval{
 				case LEFT_OPENED:
 					return includes((LeftOpened)interval);
 				case RIGHT_OPENED:
-					return (minimumIncluded)
-							&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
+					return /*(minimumIncluded)
+							&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue())*/
+							includes((RightOpened)interval);
 				case UNOPENED:
 					return (minimumIncluded) && (maximumIncluded);
 				default:

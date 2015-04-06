@@ -25,7 +25,7 @@ public abstract class Interval {
 		return minimum2.isLessThan(value) && maximum2.isGreaterThan(value);
 	}
 	public abstract boolean includes(Interval interval);
-	
+	//public abstract boolean includes(LeftOpened interval) ;
 	protected boolean includesBothOpened(Interval interval) {
 		boolean minimumIncluded = this.includes(interval.minimum2.getValue());
 		boolean maximumIncluded = this.includes(interval.maximum2.getValue());
