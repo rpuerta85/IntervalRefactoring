@@ -23,8 +23,6 @@ public class BothOpened extends Interval{
 	
 	@Override
 	public boolean includes(Interval interval) {
-			boolean minimumIncluded = this.includes(interval.minimum2.getValue());
-			boolean maximumIncluded = this.includes(interval.maximum2.getValue());
 			switch (interval.opening) {
 				case BOTH_OPENED:
 					return includesBothOpened(interval);
