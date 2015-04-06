@@ -23,24 +23,30 @@ public class BothOpened extends Interval{
 	
 	@Override
 	public boolean includes(Interval interval) {
-			switch (interval.opening) {
-				case BOTH_OPENED:
-					return includesBothOpened(interval);
-				case LEFT_OPENED:
-					return includes((LeftOpened)interval);
-				case RIGHT_OPENED:
-					return /*(minimumIncluded)
-							&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue())*/
-							includes((RightOpened)interval);
-				case UNOPENED:
-					return /*(minimumIncluded) && (maximumIncluded)*/includes((UnOpened)interval);
-				default:
-					assert false;
-					return false;
-				}
-		
-			
-		}
+		return interval.amIIncludeInInterval(this);
+	}
+	
+	
+//	@Override
+//	public boolean includes(Interval interval) {
+//			switch (interval.opening) {
+//				case BOTH_OPENED:
+//					return includesBothOpened(interval);
+//				case LEFT_OPENED:
+//					return includes((LeftOpened)interval);
+//				case RIGHT_OPENED:
+//					return /*(minimumIncluded)
+//							&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue())*/
+//							includes((RightOpened)interval);
+//				case UNOPENED:
+//					return /*(minimumIncluded) && (maximumIncluded)*/includes((UnOpened)interval);
+//				default:
+//					assert false;
+//					return false;
+//				}
+//		
+//			
+//		}
 
 	@Override
 	public boolean intersectsWithMinimunEqualsMaximumImplementation(
@@ -52,5 +58,10 @@ public class BothOpened extends Interval{
 	public boolean intersectsWithMaximumEqualsMinimumImplementation(
 			Interval interval) {
 		return false;
+	}
+
+	@Override
+	public boolean amIIncludeInInterval(BothOpened interval) {
+		return interval.includesBothOpened(this);
 	}
 }
