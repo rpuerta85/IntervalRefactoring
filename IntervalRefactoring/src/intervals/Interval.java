@@ -28,6 +28,8 @@ public abstract class Interval {
 	//public abstract boolean includes(LeftOpened interval) ;
 	public abstract boolean amIIncludeInInterval(BothOpened bothOpened);
 	public  abstract boolean amIIncludeInInterval(LeftOpened leftOpened) ;
+	public abstract boolean amIIncludeInInterval(RightOpened rightOpened);
+
 	
 	protected boolean includesBothOpened(Interval interval) {
 		boolean minimumIncluded = this.includes(interval.minimum2.getValue());
@@ -180,6 +182,7 @@ public abstract class Interval {
 		// TODO
 		return false;
 	}
+
 	
 
 

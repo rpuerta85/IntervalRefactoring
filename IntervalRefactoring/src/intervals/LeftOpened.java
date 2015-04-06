@@ -36,7 +36,7 @@ public class LeftOpened extends Interval {
 	public boolean includes(UnOpened interval) {
 		return interval.amIIncludeInInterval(this);
 	}
-	
+	@Override
 	public boolean includes(Interval interval) {
 		return interval.amIIncludeInInterval(this);
 	}
