@@ -10,7 +10,7 @@ public class BothOpened extends Interval{
 	}
 
 	//Doble despacho
-	public boolean includes(LeftOpened interval) {
+	/*public boolean includes(LeftOpened interval) {
 		return interval.amIIncludeInInterval(this);
 	}
 	public boolean includes(RightOpened interval) {
@@ -18,7 +18,7 @@ public class BothOpened extends Interval{
 	}
 	public boolean includes(UnOpened interval) {
 		return interval.amIIncludeInInterval(this);
-	}
+	}*/
 	
 	@Override
 	public boolean includes(Interval interval) {
@@ -53,6 +53,8 @@ public class BothOpened extends Interval{
 	public boolean amIIncludeInInterval(UnOpened interval) {
 		return interval.includesBothOpened(this);
 	}
+
+
 
 	
 	

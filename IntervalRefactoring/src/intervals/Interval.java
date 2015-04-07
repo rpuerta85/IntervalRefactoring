@@ -32,15 +32,27 @@ public abstract class Interval {
 	
 	
 	
-	/*public  boolean amIIncludeInIntervalTemplateMethod(Interval interval ) {
+	/*public  boolean amIIncludeInIntervalTemplateMethod(Interval interval) {
 		boolean minimumIncluded = interval.includes(minimum2.getValue());
 		boolean maximumIncluded = interval.includes(maximum2.getValue());
-		return (minimumIncluded || isMinimumEquals(minimum2.getValue(),interval))
-				&& (maximumIncluded || isMaximumEquals(maximum2.getValue(),interval));
+		return (minimumIncluded || interval.isMinimumEquals(minimum2.getValue()))
+				&& (maximumIncluded || interval.isMaximumEquals(maximum2.getValue()));
 	}*/
+	//minimum2.getValue() == interval.minimum2.getValue()
 	
-	//protected abstract boolean isMinimumIncluded(Interval interval);
-	//protected abstract boolean isMaximumIncluded(Interval interval);
+	//protected abstract boolean isMinimumEquals(double value);
+	//protected abstract boolean isMaximumEquals(double value);
+	
+	/*protected abstract boolean isMinimumEquals(LeftOpened interval);
+	protected abstract boolean isMaximumEquals(LeftOpened interval);
+	protected abstract boolean isMinimumEquals(BothOpened interval);
+	protected abstract boolean isMaximumEquals(BothOpened interval);
+	protected abstract boolean isMinimumEquals(RightOpened interval);
+	protected abstract boolean isMaximumEquals(RightOpened interval);
+	protected abstract boolean isMinimumEquals(UnOpened interval);
+	protected abstract boolean isMaximumEquals(UnOpened interval);*/
+	
+	
 	
 	
 	/*protected abstract boolean isMinimumEquals(double intervalMinimumValue,LeftOpened interval);
