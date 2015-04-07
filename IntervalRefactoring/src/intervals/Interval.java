@@ -4,24 +4,24 @@ import utils.Point;
 
 public abstract class Interval {
 
-	protected Point maximum2;
-	protected Point minimum2;
+	protected Point maximum;
+	protected Point minimum;
 	
 	protected Opening opening;
 
 	 Interval(Point minimum, Point maximum, Opening opening) {
-		this.minimum2 = minimum;
-		this.maximum2 = maximum;
+		this.minimum = minimum;
+		this.maximum = maximum;
 		this.opening = opening;
 		
 	}
 	 
 	public double midPoint() {
-		return (maximum2.getValue() + minimum2.getValue()) / 2;
+		return (maximum.getValue() + minimum.getValue()) / 2;
 	}
 
 	public boolean includes(double value) {
-		return minimum2.isLessThan(value) && maximum2.isGreaterThan(value);
+		return minimum.isLessThan(value) && maximum.isGreaterThan(value);
 	}
 	public abstract boolean includes(Interval interval);
 
@@ -29,6 +29,7 @@ public abstract class Interval {
 	public abstract boolean amIIncludeInInterval(LeftOpened leftOpened) ;
 	public abstract boolean amIIncludeInInterval(RightOpened rightOpened);
 	public abstract boolean amIIncludeInInterval(UnOpened unOpened);
+	
 	
 	//hacer un template de este metodo supondria añadir a las clases hijas 4*2=8 metodos nuevos
 	//para poder mapear por parametro cada clase hija o en su defecto si el template lo hacemos mediante
@@ -45,22 +46,22 @@ public abstract class Interval {
 	//protected abstract boolean isMaximumEquals(double value);
 	
 	protected boolean includesBothOpened(Interval interval) {
-		boolean minimumIncluded = this.includes(interval.minimum2.getValue());
-		boolean maximumIncluded = this.includes(interval.maximum2.getValue());
-		return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
-				&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
+		boolean minimumIncluded = this.includes(interval.minimum.getValue());
+		boolean maximumIncluded = this.includes(interval.maximum.getValue());
+		return (minimumIncluded || minimum.getValue() == interval.minimum.getValue())
+				&& (maximumIncluded || maximum.getValue() == interval.maximum.getValue());
 	}
 	
 	public boolean intersectsWith(Interval interval){
-		if (minimum2.getValue() == interval.maximum2.getValue()) {
+		if (minimum.getValue() == interval.maximum.getValue()) {
 			return intersectsWithMinimunEqualsMaximumImplementation(interval);
 		}
-		if (maximum2.getValue() == interval.minimum2.getValue()) {
+		if (maximum.getValue() == interval.minimum.getValue()) {
 			return intersectsWithMaximumEqualsMinimumImplementation(interval);
 		
 		}
-		return this.includes(interval.minimum2.getValue())
-			|| this.includes(interval.maximum2.getValue());
+		return this.includes(interval.minimum.getValue())
+			|| this.includes(interval.maximum.getValue());
 		}	
 	public abstract boolean intersectsWithMinimunEqualsMaximumImplementation(Interval interval);
 	public abstract boolean intersectsWithMaximumEqualsMinimumImplementation(Interval interval);

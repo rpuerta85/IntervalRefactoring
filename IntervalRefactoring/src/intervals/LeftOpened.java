@@ -31,30 +31,30 @@ public class LeftOpened extends Interval {
 
 	@Override
 	public boolean amIIncludeInInterval(LeftOpened interval) {
-		boolean minimumIncluded = interval.includes(minimum2.getValue());
-		boolean maximumIncluded = interval.includes(maximum2.getValue());
-		return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
-				&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
+		boolean minimumIncluded = interval.includes(minimum.getValue());
+		boolean maximumIncluded = interval.includes(maximum.getValue());
+		return (minimumIncluded || minimum.getValue() == interval.minimum.getValue())
+				&& (maximumIncluded || maximum.getValue() == interval.maximum.getValue());
 	}
 	@Override
 	public boolean amIIncludeInInterval(RightOpened interval) {
-		boolean minimumIncluded = interval.includes(minimum2.getValue());
-		boolean maximumIncluded = interval.includes(maximum2.getValue());
-		return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
+		boolean minimumIncluded = interval.includes(minimum.getValue());
+		boolean maximumIncluded = interval.includes(maximum.getValue());
+		return (minimumIncluded || minimum.getValue() == interval.minimum.getValue())
 				&& (maximumIncluded);
 	}
 	@Override
 	public boolean amIIncludeInInterval(UnOpened interval) {
-		boolean minimumIncluded = interval.includes(minimum2.getValue());
-		boolean maximumIncluded = interval.includes(maximum2.getValue());
-		return (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
-				&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
+		boolean minimumIncluded = interval.includes(minimum.getValue());
+		boolean maximumIncluded = interval.includes(maximum.getValue());
+		return (minimumIncluded || minimum.getValue() == interval.minimum.getValue())
+				&& (maximumIncluded || maximum.getValue() == interval.maximum.getValue());
 	}
 	@Override
 	public boolean amIIncludeInInterval(BothOpened interval) {
-		boolean minimumIncluded = interval.includes(minimum2.getValue());
-		boolean maximumIncluded = interval.includes(maximum2.getValue());
-		return  (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
+		boolean minimumIncluded = interval.includes(minimum.getValue());
+		boolean maximumIncluded = interval.includes(maximum.getValue());
+		return  (minimumIncluded || minimum.getValue() == interval.minimum.getValue())
 				&& (maximumIncluded);
 	}
 
