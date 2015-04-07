@@ -11,19 +11,6 @@ public class RightOpened extends Interval {
 		super(new ExactPoint(minimum), new OpenPoint(maximum), TYPE);
 	}	
 	
-	/*public boolean includes(BothOpened interval) {
-		return interval.amIIncludeInInterval(this);
-	}
-	public boolean includes(LeftOpened interval) {
-		return interval.amIIncludeInInterval(this);
-	}
-	public boolean includes(UnOpened interval) {
-		return interval.amIIncludeInInterval(this);
-	}
-	public boolean includes(RightOpened interval) {
-		return interval.amIIncludeInInterval(this);
-	}*/
-	
 	@Override
 	public boolean amIIncludeInInterval(RightOpened interval) {
 		boolean minimumIncluded = interval.includes(minimum2.getValue());

@@ -9,15 +9,6 @@ public class UnOpened extends Interval{
 		super(new ExactPoint(minimum), new ExactPoint(maximum), TYPE);
 	}
 	
-	/*public boolean includes(BothOpened interval) {
-		return interval.amIIncludeInInterval(this);
-	}
-	public boolean includes(RightOpened interval) {
-		return interval.amIIncludeInInterval(this);
-	}
-	public boolean includes(UnOpened interval) {
-		return interval.amIIncludeInInterval(this);
-	}*/
 	public boolean amIIncludeInInterval(UnOpened interval) {
 		boolean minimumIncluded = interval.includes(minimum2.getValue());
 		boolean maximumIncluded = interval.includes(maximum2.getValue());

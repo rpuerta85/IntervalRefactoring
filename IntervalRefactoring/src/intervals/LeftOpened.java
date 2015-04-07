@@ -11,17 +11,6 @@ public class LeftOpened extends Interval {
 		super(new OpenPoint(minimum),new ExactPoint(maximum), TYPE);
 	}
 	
-	/*public boolean includes(BothOpened interval) {
-		return interval.amIIncludeInInterval(this);
-	}
-	public boolean includes(RightOpened interval) {
-		return interval.amIIncludeInInterval(this);
-	}
-	public boolean includes(UnOpened interval) {
-		return interval.amIIncludeInInterval(this);
-	}*/
-	
-	
 	@Override
 	public boolean includes(Interval interval) {
 		return interval.amIIncludeInInterval(this);
