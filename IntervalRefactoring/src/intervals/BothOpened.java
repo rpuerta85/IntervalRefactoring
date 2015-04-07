@@ -6,7 +6,6 @@ import utils.OpenPoint;
 public class BothOpened extends Interval{
 	private static final Opening TYPE = Opening.BOTH_OPENED;
 	public BothOpened(double minimum, double maximum) {
-		//super(new FromPoint(minimum), new UntilPoint(maximum), opening);
 		super(new OpenPoint(minimum), new OpenPoint(maximum), TYPE);
 	}
 
@@ -25,28 +24,6 @@ public class BothOpened extends Interval{
 	public boolean includes(Interval interval) {
 		return interval.amIIncludeInInterval(this);
 	}
-	
-	
-//	@Override
-//	public boolean includes(Interval interval) {
-//			switch (interval.opening) {
-//				case BOTH_OPENED:
-//					return includesBothOpened(interval);
-//				case LEFT_OPENED:
-//					return includes((LeftOpened)interval);
-//				case RIGHT_OPENED:
-//					return /*(minimumIncluded)
-//							&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue())*/
-//							includes((RightOpened)interval);
-//				case UNOPENED:
-//					return /*(minimumIncluded) && (maximumIncluded)*/includes((UnOpened)interval);
-//				default:
-//					assert false;
-//					return false;
-//				}
-//		
-//			
-//		}
 
 	@Override
 	public boolean intersectsWithMinimunEqualsMaximumImplementation(

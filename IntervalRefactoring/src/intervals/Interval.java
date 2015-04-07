@@ -15,12 +15,11 @@ public abstract class Interval {
 		this.opening = opening;
 		
 	}
-	
+	 
 	public double midPoint() {
 		return (maximum2.getValue() + minimum2.getValue()) / 2;
 	}
 
-	
 	public boolean includes(double value) {
 		return minimum2.isLessThan(value) && maximum2.isGreaterThan(value);
 	}
