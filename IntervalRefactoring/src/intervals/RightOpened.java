@@ -11,12 +11,12 @@ public class RightOpened extends Interval {
 		super(new ExactPoint(minimum), new OpenPoint(maximum), TYPE);
 	}	
 	
-	@Override
+	/*@Override
 	public boolean includes(double value) {
 		//return minimum <= value && value < maximum;
 		return minimum2.isLessThan(value) && maximum2.isGreaterThan(value);
 
-	}
+	}*/
 
 	public boolean includes(BothOpened interval) {
 		return interval.amIIncludeInInterval(this);

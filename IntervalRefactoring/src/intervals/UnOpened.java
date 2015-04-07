@@ -8,11 +8,11 @@ public class UnOpened extends Interval{
 	public UnOpened(double minimum, double maximum) {
 		super(new ExactPoint(minimum), new ExactPoint(maximum), TYPE);
 	}
-	@Override
+	/*@Override
 	public boolean includes(double value) {
 		//return minimum <= value && value <= maximum;
 		return minimum2.isLessThan(value) && maximum2.isGreaterThan(value);
-	}
+	}*/
 
 	
 	
