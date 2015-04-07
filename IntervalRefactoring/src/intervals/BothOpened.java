@@ -16,7 +16,7 @@ public class BothOpened extends Interval{
 
 	@Override
 	public boolean intersectsWithMinimunEqualsMaximumImplementation(
-			Interval interval) {// TODO Auto-generated method stub
+			Interval interval) {
 		return false;
 	}
 

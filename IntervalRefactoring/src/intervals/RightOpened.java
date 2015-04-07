@@ -2,7 +2,6 @@ package intervals;
 
 import utils.ExactPoint;
 import utils.OpenPoint;
-import utils.Point;
 
 public class RightOpened extends Interval {
 	private static final Opening TYPE = Opening.RIGHT_OPENED;
@@ -49,9 +48,7 @@ public class RightOpened extends Interval {
 		boolean maximumIncluded = interval.includes(maximum2.getValue());
 		return (minimumIncluded)
 				&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
-		
-		
-	}
+			}
 	@Override
 	public boolean amIIncludeInInterval(UnOpened interval) {
 		boolean minimumIncluded = interval.includes(minimum2.getValue());

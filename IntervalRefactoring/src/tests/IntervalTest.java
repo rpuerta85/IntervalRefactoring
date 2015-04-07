@@ -3,7 +3,6 @@ package tests;
 import static org.junit.Assert.*;
 import intervals.Interval;
 import intervals.IntervalFactory;
-import intervals.Opening;
 
 import org.junit.Test;
 

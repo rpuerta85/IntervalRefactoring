@@ -10,7 +10,7 @@ public class LeftOpened extends Interval {
 	public LeftOpened(double minimum, double maximum) {
 		super(new OpenPoint(minimum),new ExactPoint(maximum), TYPE);
 	}
-	
+
 	@Override
 	public boolean includes(Interval interval) {
 		return interval.amIIncludeInInterval(this);

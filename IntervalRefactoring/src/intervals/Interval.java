@@ -30,47 +30,19 @@ public abstract class Interval {
 	public abstract boolean amIIncludeInInterval(RightOpened rightOpened);
 	public abstract boolean amIIncludeInInterval(UnOpened unOpened);
 	
-	
-	
+	//hacer un template de este metodo supondria añadir a las clases hijas 4*2=8 metodos nuevos
+	//para poder mapear por parametro cada clase hija o en su defecto si el template lo hacemos mediante
+	//una condicion supondría añadir 4 metodos mas a las clases hijas, luego creo que no ganamos nada.
+	//Por tanto dado que no logro mejorar lo ya existente prefiero dejarlo tal y como esta.
 	/*public  boolean amIIncludeInIntervalTemplateMethod(Interval interval) {
 		boolean minimumIncluded = interval.includes(minimum2.getValue());
 		boolean maximumIncluded = interval.includes(maximum2.getValue());
 		return (minimumIncluded || interval.isMinimumEquals(minimum2.getValue()))
 				&& (maximumIncluded || interval.isMaximumEquals(maximum2.getValue()));
 	}*/
-	//minimum2.getValue() == interval.minimum2.getValue()
 	
 	//protected abstract boolean isMinimumEquals(double value);
 	//protected abstract boolean isMaximumEquals(double value);
-	
-	/*protected abstract boolean isMinimumEquals(LeftOpened interval);
-	protected abstract boolean isMaximumEquals(LeftOpened interval);
-	protected abstract boolean isMinimumEquals(BothOpened interval);
-	protected abstract boolean isMaximumEquals(BothOpened interval);
-	protected abstract boolean isMinimumEquals(RightOpened interval);
-	protected abstract boolean isMaximumEquals(RightOpened interval);
-	protected abstract boolean isMinimumEquals(UnOpened interval);
-	protected abstract boolean isMaximumEquals(UnOpened interval);*/
-	
-	
-	
-	
-	/*protected abstract boolean isMinimumEquals(double intervalMinimumValue,LeftOpened interval);
-	protected abstract boolean isMaximumEquals(double intervalMaximumValue,LeftOpened interval);
-	protected abstract boolean isMinimumEquals(double intervalMinimumValue,RightOpened interval);
-	protected abstract boolean isMaximumEquals(double intervalMaximumValue,RightOpened interval);
-	protected abstract boolean isMinimumEquals(double intervalMinimumValue,UnOpened interval);
-	protected abstract boolean isMaximumEquals(double intervalMaximumValue,UnOpened interval);
-	protected abstract boolean isMinimumEquals(double intervalMinimumValue,BothOpened interval);
-	protected abstract boolean isMaximumEquals(double intervalMaximumValue,BothOpened interval);*/
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	protected boolean includesBothOpened(Interval interval) {
 		boolean minimumIncluded = this.includes(interval.minimum2.getValue());
@@ -89,9 +61,7 @@ public abstract class Interval {
 		}
 		return this.includes(interval.minimum2.getValue())
 			|| this.includes(interval.maximum2.getValue());
-		}
-	
-	
+		}	
 	public abstract boolean intersectsWithMinimunEqualsMaximumImplementation(Interval interval);
 	public abstract boolean intersectsWithMaximumEqualsMinimumImplementation(Interval interval);
 
