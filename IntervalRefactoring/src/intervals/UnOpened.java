@@ -4,9 +4,9 @@ import utils.ExactPoint;
 
 
 public class UnOpened extends Interval{
-	
-	public UnOpened(double minimum, double maximum, Opening opening) {
-		super(new ExactPoint(minimum), new ExactPoint(maximum), opening);
+	private static final Opening TYPE = Opening.UNOPENED;
+	public UnOpened(double minimum, double maximum) {
+		super(new ExactPoint(minimum), new ExactPoint(maximum), TYPE);
 	}
 	@Override
 	public boolean includes(double value) {

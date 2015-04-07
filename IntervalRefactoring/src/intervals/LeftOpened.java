@@ -2,12 +2,13 @@ package intervals;
 
 import utils.ExactPoint;
 import utils.OpenPoint;
-import utils.Point;
 
 public class LeftOpened extends Interval {
 
-	public LeftOpened(double minimum, double maximum, Opening opening) {
-		super(new OpenPoint(minimum),new ExactPoint(maximum), opening);
+	private static final Opening TYPE = Opening.LEFT_OPENED;
+	
+	public LeftOpened(double minimum, double maximum) {
+		super(new OpenPoint(minimum),new ExactPoint(maximum), TYPE);
 	}
 
 	@Override

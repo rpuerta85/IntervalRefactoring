@@ -5,8 +5,10 @@ import utils.OpenPoint;
 import utils.Point;
 
 public class RightOpened extends Interval {
-	public RightOpened(double minimum, double maximum, Opening opening) {
-		super(new ExactPoint(minimum), new OpenPoint(maximum), opening);
+	private static final Opening TYPE = Opening.RIGHT_OPENED;
+	
+	public RightOpened(double minimum, double maximum) {
+		super(new ExactPoint(minimum), new OpenPoint(maximum), TYPE);
 	}	
 	
 	@Override

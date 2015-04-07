@@ -4,14 +4,13 @@ import utils.OpenPoint;
 
 
 public class BothOpened extends Interval{
-
-	public BothOpened(double minimum, double maximum, Opening opening) {
+	private static final Opening TYPE = Opening.BOTH_OPENED;
+	public BothOpened(double minimum, double maximum) {
 		//super(new FromPoint(minimum), new UntilPoint(maximum), opening);
-		super(new OpenPoint(minimum), new OpenPoint(maximum), opening);
+		super(new OpenPoint(minimum), new OpenPoint(maximum), TYPE);
 	}
 
 	//Doble despacho
-	
 	public boolean includes(LeftOpened interval) {
 		return interval.amIIncludeInInterval(this);
 	}
