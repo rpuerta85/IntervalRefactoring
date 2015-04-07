@@ -8,13 +8,6 @@ public class UnOpened extends Interval{
 	public UnOpened(double minimum, double maximum) {
 		super(new ExactPoint(minimum), new ExactPoint(maximum), TYPE);
 	}
-	/*@Override
-	public boolean includes(double value) {
-		//return minimum <= value && value <= maximum;
-		return minimum2.isLessThan(value) && maximum2.isGreaterThan(value);
-	}*/
-
-	
 	
 	public boolean includes(BothOpened interval) {
 		return interval.amIIncludeInInterval(this);
@@ -64,8 +57,6 @@ public class UnOpened extends Interval{
 		boolean maximumIncluded = interval.includes(maximum2.getValue());
 		return (minimumIncluded)
 				&& (maximumIncluded || maximum2.getValue() == interval.maximum2.getValue());
-		
-		//return interval.includesBothOpened(this);
 
 	}
 	public boolean amIIncludeInInterval(RightOpened interval) {
