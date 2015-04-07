@@ -1,13 +1,13 @@
 package intervals;
 
-import utils.FromPoint;
+import utils.OpenPoint;
 
 
 public class BothOpened extends Interval{
 
 	public BothOpened(double minimum, double maximum, Opening opening) {
 		//super(new FromPoint(minimum), new UntilPoint(maximum), opening);
-		super(new FromPoint(minimum), new FromPoint(maximum), opening);
+		super(new OpenPoint(minimum), new OpenPoint(maximum), opening);
 	}
 
 	//Doble despacho

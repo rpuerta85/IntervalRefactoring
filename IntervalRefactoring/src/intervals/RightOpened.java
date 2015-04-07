@@ -1,12 +1,12 @@
 package intervals;
 
 import utils.ExactPoint;
-import utils.FromPoint;
+import utils.OpenPoint;
 import utils.Point;
 
 public class RightOpened extends Interval {
 	public RightOpened(double minimum, double maximum, Opening opening) {
-		super(new ExactPoint(minimum), new FromPoint(maximum), opening);
+		super(new ExactPoint(minimum), new OpenPoint(maximum), opening);
 	}	
 	
 	@Override

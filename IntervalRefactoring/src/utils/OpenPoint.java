@@ -1,9 +1,9 @@
  package utils;
 
 
-public class FromPoint extends Point {
+public class OpenPoint extends Point {
 
-	public FromPoint(double value) {
+	public OpenPoint(double value) {
 		super(value);
 	}
 
