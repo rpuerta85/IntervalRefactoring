@@ -25,12 +25,40 @@ public abstract class Interval {
 		return minimum2.isLessThan(value) && maximum2.isGreaterThan(value);
 	}
 	public abstract boolean includes(Interval interval);
-	//public abstract boolean includes(LeftOpened interval) ;
-	
+
 	public abstract boolean amIIncludeInInterval(BothOpened bothOpened);
 	public abstract boolean amIIncludeInInterval(LeftOpened leftOpened) ;
 	public abstract boolean amIIncludeInInterval(RightOpened rightOpened);
 	public abstract boolean amIIncludeInInterval(UnOpened unOpened);
+	
+	
+	
+	/*public  boolean amIIncludeInIntervalTemplateMethod(Interval interval ) {
+		boolean minimumIncluded = interval.includes(minimum2.getValue());
+		boolean maximumIncluded = interval.includes(maximum2.getValue());
+		return (minimumIncluded || isMinimumEquals(minimum2.getValue(),interval))
+				&& (maximumIncluded || isMaximumEquals(maximum2.getValue(),interval));
+	}*/
+	
+	//protected abstract boolean isMinimumIncluded(Interval interval);
+	//protected abstract boolean isMaximumIncluded(Interval interval);
+	
+	
+	/*protected abstract boolean isMinimumEquals(double intervalMinimumValue,LeftOpened interval);
+	protected abstract boolean isMaximumEquals(double intervalMaximumValue,LeftOpened interval);
+	protected abstract boolean isMinimumEquals(double intervalMinimumValue,RightOpened interval);
+	protected abstract boolean isMaximumEquals(double intervalMaximumValue,RightOpened interval);
+	protected abstract boolean isMinimumEquals(double intervalMinimumValue,UnOpened interval);
+	protected abstract boolean isMaximumEquals(double intervalMaximumValue,UnOpened interval);
+	protected abstract boolean isMinimumEquals(double intervalMinimumValue,BothOpened interval);
+	protected abstract boolean isMaximumEquals(double intervalMaximumValue,BothOpened interval);*/
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	protected boolean includesBothOpened(Interval interval) {
@@ -67,6 +95,9 @@ public abstract class Interval {
 		// TODO
 		return false;
 	}
+
+
+	
 
 	
 

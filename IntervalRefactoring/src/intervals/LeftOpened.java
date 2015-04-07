@@ -3,7 +3,6 @@ package intervals;
 import utils.ExactPoint;
 import utils.FromPoint;
 import utils.Point;
-import utils.UntilPoint;
 
 public class LeftOpened extends Interval {
 
@@ -72,6 +71,16 @@ public class LeftOpened extends Interval {
 		return  (minimumIncluded || minimum2.getValue() == interval.minimum2.getValue())
 				&& (maximumIncluded);
 	}
+
+
+
+
+
+
+
+	
+
+
 
 
 
