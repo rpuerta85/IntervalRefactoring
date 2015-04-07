@@ -30,7 +30,6 @@ public abstract class Interval {
 	public abstract boolean amIIncludeInInterval(RightOpened rightOpened);
 	public abstract boolean amIIncludeInInterval(UnOpened unOpened);
 	
-	
 	//hacer un template de este metodo supondria añadir a las clases hijas 4*2=8 metodos nuevos
 	//para poder mapear por parametro cada clase hija o en su defecto si el template lo hacemos mediante
 	//una condicion supondría añadir 4 metodos mas a las clases hijas, luego creo que no ganamos nada.
