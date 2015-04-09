@@ -19,6 +19,8 @@ public class OpenPoint extends Point {
 		return this.value > value;
 
 	}
-	
+	public boolean amIIncludeInInterval(Interval interval){
+		return (this.isLessThan(interval.getMinimum().value) &&   this.isLessThan(interval.getMaximum().value));
+	}
 
 }
