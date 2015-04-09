@@ -18,7 +18,5 @@ public class ExactPoint extends Point {
 	public boolean isGreaterThan(double value) {
 		return this.value >= value;
 	}
-	public boolean amIIncludeInInterval(Interval interval){
-		return (this.isLessThan(interval.getMinimum().value) &&   this.isLessThan(interval.getMaximum().value));
-	}
+
 }

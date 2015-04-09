@@ -77,6 +77,14 @@ public abstract class Interval {
 		return false;
 	}
 
+	public Point getMaximum() {
+		return maximum;
+	}
+
+	public Point getMinimum() {
+		return minimum;
+	}
+
 
 	
 
