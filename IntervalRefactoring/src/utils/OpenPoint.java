@@ -1,5 +1,7 @@
  package utils;
 
+import intervals.Interval;
+
 
 public class OpenPoint extends Point {
 
@@ -17,5 +19,6 @@ public class OpenPoint extends Point {
 		return this.value > value;
 
 	}
+	
 
 }
