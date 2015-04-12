@@ -31,13 +31,6 @@ public abstract class Interval {
 
 	}
 	
-	/*protected boolean includesBothOpened(Interval interval) {
-		boolean minimumIncluded = this.includes(interval.minimum.getValue());
-		boolean maximumIncluded = this.includes(interval.maximum.getValue());
-		return (minimumIncluded || minimum.getValue() == interval.minimum.getValue())
-				&& (maximumIncluded || maximum.getValue() == interval.maximum.getValue());
-	}*/
-	
 	public boolean intersectsWith(Interval interval){
 		if (minimum.getValue() == interval.maximum.getValue()) {
 			return intersectsWithMinimunEqualsMaximumImplementation(interval);

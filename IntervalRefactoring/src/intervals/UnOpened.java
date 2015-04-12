@@ -15,15 +15,6 @@ public class UnOpened extends Interval{
 		return (minimumIncluded || minimum.getValue() == interval.minimum.getValue())
 				&& (maximumIncluded || maximum.getValue() == interval.maximum.getValue());
 	}
-	/*public boolean includes(LeftOpened interval) {
-		return interval.amIIncludeInInterval(this);
-	}
-	
-	
-	@Override
-	public boolean includes(Interval interval) {
-		return interval.amIIncludeInInterval(this);
-	}*/
 
 	@Override
 	public boolean intersectsWithMinimunEqualsMaximumImplementation(
@@ -37,27 +28,5 @@ public class UnOpened extends Interval{
 			Interval interval) {
 		return interval.opening == Opening.RIGHT_OPENED ||
 				interval.opening == Opening.UNOPENED;
-	}/*
-	public boolean amIIncludeInInterval(BothOpened interval) {
-		boolean minimumIncluded = interval.includes(minimum.getValue());
-		boolean maximumIncluded = interval.includes(maximum.getValue());
-		return  (minimumIncluded) && (maximumIncluded);
 	}
-	public boolean amIIncludeInInterval(LeftOpened interval) {
-		boolean minimumIncluded = interval.includes(minimum.getValue());
-		boolean maximumIncluded = interval.includes(maximum.getValue());
-		return (minimumIncluded)
-				&& (maximumIncluded || maximum.getValue() == interval.maximum.getValue());
-
-	}
-	public boolean amIIncludeInInterval(RightOpened interval) {
-		boolean minimumIncluded = interval.includes(minimum.getValue());
-		boolean maximumIncluded = interval.includes(maximum.getValue());
-		return (minimumIncluded || minimum.getValue() == interval.minimum.getValue())
-				&& (maximumIncluded);
-	}*/
-
-	
-	
-
 }
