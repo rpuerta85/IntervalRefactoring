@@ -15,6 +15,7 @@ public abstract class Interval {
 		this.maximum = maximum;
 		this.opening = opening;
 		
+		
 	}
 	 
 	public double midPoint() {
