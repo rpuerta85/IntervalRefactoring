@@ -1,7 +1,5 @@
 package utils;
 
-import intervals.Interval;
-
 public class ExactPoint extends Point {
 
 	public ExactPoint(double value) {

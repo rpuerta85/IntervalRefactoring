@@ -9,13 +9,6 @@ public class UnOpened extends Interval{
 		super(new ExactPoint(minimum), new ExactPoint(maximum), TYPE);
 	}
 	
-	/*public boolean amIIncludeInInterval(UnOpened interval) {
-		boolean minimumIncluded = interval.includes(minimum.getValue());
-		boolean maximumIncluded = interval.includes(maximum.getValue());
-		return (minimumIncluded || minimum.getValue() == interval.minimum.getValue())
-				&& (maximumIncluded || maximum.getValue() == interval.maximum.getValue());
-	}*/
-
 	@Override
 	public boolean intersectsWithMinimunEqualsMaximumImplementation(
 			Interval interval) {
