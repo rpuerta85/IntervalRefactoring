@@ -21,14 +21,37 @@ public abstract class Interval {
 	}
 
 	public boolean includes(double value) {
+		//System.out.println(minimum.isLessThan(value));
 		return minimum.isLessThan(value) && maximum.isGreaterThan(value);
 	}
-	public abstract boolean includes(Interval interval);
+	public boolean includes(Point point) {
+		return minimum.isLessThan(point.getValue()) && maximum.isGreaterThan(point.getValue());
+	}
 
-	public abstract boolean amIIncludeInInterval(BothOpened bothOpened);
+	
+	//public abstract boolean includes(Interval interval);
+	
+	public  boolean includes(Interval interval){
+		//System.out.println(interval.getMinimum().amIIncludeInInterval(this));
+		//System.out.println(interval.getMinimum().amIIncludeInInterval(this));
+		//System.out.println(interval.includes(this.minimum.getValue()));
+	//System.out.println(this.includes(interval.getMinimum().getValue()));
+		//return this.minimum.amIIncludeInIntervalMinimum(interval) && this.maximum.amIIncludeInIntervalMaximum(interval); //&& this.maximum.amIIncludeInInterval(interval);
+		//return interval.includes(this.minimum.getValue()) && interval.includes(this.maximum.getValue());
+		//return interval.getMinimum().amIIncludeInInterval(this) && interval.getMaximum().amIIncludeInInterval(this);
+	//eturn this.includes(interval.getMinimum()) && this.includes(interval.getMaximum());
+	return this.minimum.isGreaterThan(interval.getMinimum()) && this.maximum.isLessThan((interval.getMaximum())); 
+	//return interval.getMinimum().isLessThan(this.minimum) && this.maximum.isGreaterThan((interval.getMaximum())); 
+
+	}
+
+	/*public abstract boolean amIIncludeInInterval(BothOpened bothOpened);
 	public abstract boolean amIIncludeInInterval(LeftOpened leftOpened) ;
 	public abstract boolean amIIncludeInInterval(RightOpened rightOpened);
 	public abstract boolean amIIncludeInInterval(UnOpened unOpened);
+	*/
+	
+	
 	
 	//hacer un template de este metodo supondria añadir a las clases hijas 4*2=8 metodos nuevos
 	//para poder mapear por parametro cada clase hija o en su defecto si el template lo hacemos mediante
@@ -45,8 +68,8 @@ public abstract class Interval {
 	//protected abstract boolean isMaximumEquals(double value);
 	
 	protected boolean includesBothOpened(Interval interval) {
-		boolean minimumIncluded = this.includes(interval.minimum.getValue());
-		boolean maximumIncluded = this.includes(interval.maximum.getValue());
+		boolean minimumIncluded = this.includes(interval.minimum);
+		boolean maximumIncluded = this.includes(interval.maximum);
 		return (minimumIncluded || minimum.getValue() == interval.minimum.getValue())
 				&& (maximumIncluded || maximum.getValue() == interval.maximum.getValue());
 	}
@@ -59,8 +82,8 @@ public abstract class Interval {
 			return intersectsWithMaximumEqualsMinimumImplementation(interval);
 		
 		}
-		return this.includes(interval.minimum.getValue())
-			|| this.includes(interval.maximum.getValue());
+		return this.includes(interval.minimum)
+			|| this.includes(interval.maximum);
 		}	
 	public abstract boolean intersectsWithMinimunEqualsMaximumImplementation(Interval interval);
 	public abstract boolean intersectsWithMaximumEqualsMinimumImplementation(Interval interval);

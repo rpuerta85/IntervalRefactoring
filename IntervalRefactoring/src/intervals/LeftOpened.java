@@ -11,10 +11,11 @@ public class LeftOpened extends Interval {
 		super(new OpenPoint(minimum),new ExactPoint(maximum), TYPE);
 	}
 
-	@Override
+	/*@Override
 	public boolean includes(Interval interval) {
-		return interval.amIIncludeInInterval(this);
-	}
+		//return interval.amIIncludeInInterval(this);
+		 
+	}*/
 	
 	@Override
 	public boolean intersectsWithMinimunEqualsMaximumImplementation(
@@ -28,7 +29,7 @@ public class LeftOpened extends Interval {
 		return interval.opening == Opening.RIGHT_OPENED ||
 				interval.opening == Opening.UNOPENED;
 	}
-
+/*
 	@Override
 	public boolean amIIncludeInInterval(LeftOpened interval) {
 		boolean minimumIncluded = interval.includes(minimum.getValue());
@@ -57,7 +58,7 @@ public class LeftOpened extends Interval {
 		return  (minimumIncluded || minimum.getValue() == interval.minimum.getValue())
 				&& (maximumIncluded);
 	}
-
+*/
 
 
 

@@ -9,10 +9,10 @@ public class BothOpened extends Interval{
 		super(new OpenPoint(minimum), new OpenPoint(maximum), TYPE);
 	}
 	
-	@Override
+	/*@Override
 	public boolean includes(Interval interval) {
 		return interval.amIIncludeInInterval(this);
-	}
+	}*/
 
 	@Override
 	public boolean intersectsWithMinimunEqualsMaximumImplementation(
@@ -25,7 +25,7 @@ public class BothOpened extends Interval{
 			Interval interval) {
 		return false;
 	}
-
+/*
 	@Override
 	public boolean amIIncludeInInterval(BothOpened interval) {
 		return interval.includesBothOpened(this);
@@ -42,7 +42,7 @@ public class BothOpened extends Interval{
 	public boolean amIIncludeInInterval(UnOpened interval) {
 		return interval.includesBothOpened(this);
 	}
-
+*/
 
 
 	
