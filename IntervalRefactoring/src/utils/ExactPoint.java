@@ -35,10 +35,14 @@ public class ExactPoint extends Point {
 		return this.value >= point.getValue();
 	}*/
 	public boolean isLessThan(OpenPoint point) {
-		return this.value < point.getValue();
+		return point.isGreaterThan(value);
+		//return this.value < point.getValue();ok
 	}
 	public boolean isGreaterThan(OpenPoint point) {
-		return this.value > point.getValue();
+		//return this.value > point.getValue(); ok
+		
+		return point.isLessThan(this.value);
+	
 	}
 
 	
