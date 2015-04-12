@@ -15,13 +15,18 @@ public abstract class Point {
 	
 	public abstract boolean isLessThan(Point value);
 		
-	
+	public boolean isLessThan(ExactPoint point) {
+		return this.value <= point.getValue();
+	}
+	public boolean isGreaterThan(ExactPoint point) {
+		return this.value >= point.getValue();
+	}
 	
 	public abstract boolean isGreaterThan(Point value);
 
 	
-	public abstract boolean isLessThan(ExactPoint point);
-	public  abstract boolean isGreaterThan(ExactPoint point);
+	/*public abstract boolean isLessThan(ExactPoint point);
+	public  abstract boolean isGreaterThan(ExactPoint point);*/
 	public abstract boolean isLessThan(OpenPoint point);
 	public abstract boolean isGreaterThan(OpenPoint point);
 	
