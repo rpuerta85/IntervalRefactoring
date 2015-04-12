@@ -41,6 +41,7 @@ public abstract class Interval {
 		}
 		return this.includes(interval.minimum.getValue())
 			|| this.includes(interval.maximum.getValue());
+		
 		}	
 	
 	public abstract boolean intersectsWithMinimunEqualsMaximumImplementation(Interval interval);
