@@ -10,28 +10,31 @@ public abstract class Point {
 	}
 	
 	public abstract boolean isLessThan(double value);
-	
 	public abstract boolean isGreaterThan(double value);
 	
 	public abstract boolean isLessThan(Point value);
-		
+	public abstract boolean isGreaterThan(Point value);	
+	
 	public boolean isLessThan(ExactPoint point) {
-		//return this.value <= point.getValue();
 		return point.isGreaterThan(value);
 	}
 	public boolean isGreaterThan(ExactPoint point) {
-		///return this.value >= point.getValue();
 		return point.isLessThan(value);
 	}
 	
-	
-	public abstract boolean isGreaterThan(Point value);
+	public boolean isLessThan(OpenPoint point) {
+		return point.isGreaterThan(value);
+		//return point.isLessThan(value);
+	}
+	public boolean isGreaterThan(OpenPoint point) {
+		return point.isLessThan(this.value);
 
+	}
 	
-	/*public abstract boolean isLessThan(ExactPoint point);
-	public  abstract boolean isGreaterThan(ExactPoint point);*/
-	public abstract boolean isLessThan(OpenPoint point);
-	public abstract boolean isGreaterThan(OpenPoint point);
+	
+	
+	//public abstract boolean isLessThan(OpenPoint point);
+	//public abstract boolean isGreaterThan(OpenPoint point);
 	
 	public double getValue() {
 		return value;
@@ -42,13 +45,11 @@ public abstract class Point {
 	}
 	
 	public boolean amIIncludeInIntervalMinimum(Interval interval){
-		return this.isLessThan(interval.getMinimum().value);// &&   this.isGreaterThan(interval.getMaximum().value));
-		//return interval.getMinimum().isLessThan(value) &&   interval.getMinimum().isGreaterThan(value);
+		return this.isLessThan(interval.getMinimum().value);
 
 	}
 	public boolean amIIncludeInIntervalMaximum(Interval interval){
 		return  this.isGreaterThan(interval.getMaximum().value);
-		//return interval.getMinimum().isLessThan(value) &&   interval.getMinimum().isGreaterThan(value);
 
 	}
 }

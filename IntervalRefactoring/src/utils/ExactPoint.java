@@ -11,7 +11,6 @@ public class ExactPoint extends Point {
 	@Override
 	public boolean isLessThan(double value) {
 		return this.value <= value;
-
 	}
 
 	@Override
@@ -28,22 +27,14 @@ public class ExactPoint extends Point {
 	public boolean isGreaterThan(Point point) {
 		return point.isGreaterThan(this); 
 	}
-	/*public boolean isLessThan(ExactPoint point) {
-		return this.value <= point.getValue();
-	}
-	public boolean isGreaterThan(ExactPoint point) {
-		return this.value >= point.getValue();
-	}*/
-	public boolean isLessThan(OpenPoint point) {
+	
+	/*public boolean isLessThan(OpenPoint point) {
 		return point.isGreaterThan(value);
-		//return this.value < point.getValue();ok
 	}
 	public boolean isGreaterThan(OpenPoint point) {
-		//return this.value > point.getValue(); ok
-		
 		return point.isLessThan(this.value);
 	
-	}
+	}*/
 
 	
 }

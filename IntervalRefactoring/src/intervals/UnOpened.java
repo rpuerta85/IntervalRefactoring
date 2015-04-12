@@ -10,8 +10,8 @@ public class UnOpened extends Interval{
 	}
 	
 	public boolean amIIncludeInInterval(UnOpened interval) {
-		boolean minimumIncluded = interval.includes(minimum);
-		boolean maximumIncluded = interval.includes(maximum);
+		boolean minimumIncluded = interval.includes(minimum.getValue());
+		boolean maximumIncluded = interval.includes(maximum.getValue());
 		return (minimumIncluded || minimum.getValue() == interval.minimum.getValue())
 				&& (maximumIncluded || maximum.getValue() == interval.maximum.getValue());
 	}
