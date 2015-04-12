@@ -41,4 +41,5 @@ public class ExactPoint extends Point {
 		return this.value > point.getValue();
 	}
 
+	
 }
