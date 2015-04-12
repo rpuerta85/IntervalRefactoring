@@ -28,13 +28,6 @@ public class ExactPoint extends Point {
 		return point.isGreaterThan(this); 
 	}
 	
-	/*public boolean isLessThan(OpenPoint point) {
-		return point.isGreaterThan(value);
-	}
-	public boolean isGreaterThan(OpenPoint point) {
-		return point.isLessThan(this.value);
-	
-	}*/
 
 	
 }
