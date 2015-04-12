@@ -26,6 +26,7 @@ public abstract class Interval {
 		//return minimum.isLessThan(value) && maximum.isGreaterThan(value);
 		return minimum.isGreaterThan(point) && maximum.isLessThan(point);
 
+		
 	}
 
 	public  boolean includes(Interval interval){
