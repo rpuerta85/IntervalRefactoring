@@ -12,7 +12,19 @@ public abstract class Point {
 	public abstract boolean isLessThan(double value);
 	
 	public abstract boolean isGreaterThan(double value);
+	
+	public abstract boolean isLessThan(Point value);
+		
+	
+	
+	public abstract boolean isGreaterThan(Point value);
 
+	
+	public abstract boolean isLessThan(ExactPoint point);
+	public  abstract boolean isGreaterThan(ExactPoint point);
+	public abstract boolean isLessThan(OpenPoint point);
+	public abstract boolean isGreaterThan(OpenPoint point);
+	
 	public double getValue() {
 		return value;
 	}
@@ -20,7 +32,15 @@ public abstract class Point {
 	public void setValue(double value) {
 		this.value = value;
 	}
-	public boolean amIIncludeInInterval(Interval interval){
-		return (this.isLessThan(interval.getMinimum().value) &&   this.isLessThan(interval.getMaximum().value));
+	
+	public boolean amIIncludeInIntervalMinimum(Interval interval){
+		return this.isLessThan(interval.getMinimum().value);// &&   this.isGreaterThan(interval.getMaximum().value));
+		//return interval.getMinimum().isLessThan(value) &&   interval.getMinimum().isGreaterThan(value);
+
+	}
+	public boolean amIIncludeInIntervalMaximum(Interval interval){
+		return  this.isGreaterThan(interval.getMaximum().value);
+		//return interval.getMinimum().isLessThan(value) &&   interval.getMinimum().isGreaterThan(value);
+
 	}
 }
