@@ -23,10 +23,7 @@ public abstract class Interval {
 
 	public boolean includes(double value) {
 		Point point = new ExactPoint(value);
-		//return minimum.isLessThan(value) && maximum.isGreaterThan(value);
 		return minimum.isGreaterThan(point) && maximum.isLessThan(point);
-
-		
 	}
 
 	public  boolean includes(Interval interval){
@@ -34,12 +31,12 @@ public abstract class Interval {
 
 	}
 	
-	protected boolean includesBothOpened(Interval interval) {
+	/*protected boolean includesBothOpened(Interval interval) {
 		boolean minimumIncluded = this.includes(interval.minimum.getValue());
 		boolean maximumIncluded = this.includes(interval.maximum.getValue());
 		return (minimumIncluded || minimum.getValue() == interval.minimum.getValue())
 				&& (maximumIncluded || maximum.getValue() == interval.maximum.getValue());
-	}
+	}*/
 	
 	public boolean intersectsWith(Interval interval){
 		if (minimum.getValue() == interval.maximum.getValue()) {
