@@ -1,5 +1,6 @@
 package intervals;
 
+import utils.ExactPoint;
 import utils.Point;
 
 public abstract class Interval {
@@ -21,13 +22,16 @@ public abstract class Interval {
 	}
 
 	public boolean includes(double value) {
-		return minimum.isLessThan(value) && maximum.isGreaterThan(value);
+		Point point = new ExactPoint(value);
+		return minimum.isLessThan(point) && maximum.isGreaterThan(point);
+
 	}
 
 	public  boolean includes(Interval interval){
 		return this.minimum.isGreaterThan(interval.getMinimum()) && this.maximum.isLessThan((interval.getMaximum())); 
 
 	}
+	
 	protected boolean includesBothOpened(Interval interval) {
 		boolean minimumIncluded = this.includes(interval.minimum.getValue());
 		boolean maximumIncluded = this.includes(interval.maximum.getValue());
