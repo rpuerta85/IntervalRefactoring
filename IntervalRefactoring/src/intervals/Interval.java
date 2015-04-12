@@ -23,7 +23,8 @@ public abstract class Interval {
 
 	public boolean includes(double value) {
 		Point point = new ExactPoint(value);
-		return minimum.isLessThan(point) && maximum.isGreaterThan(point);
+		//return minimum.isLessThan(value) && maximum.isGreaterThan(value);
+		return minimum.isGreaterThan(point) && maximum.isLessThan(point);
 
 	}
 
