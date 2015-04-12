@@ -8,13 +8,18 @@ public abstract class Point {
 	public Point(double value) {
 		this.value = value;
 	}
-	
-	
+
 	public abstract boolean isLessThan(double value);
 	public abstract boolean isGreaterThan(double value);
 	
 	public abstract boolean isLessThan(Point value);
 	public abstract boolean isGreaterThan(Point value);	
+	/*public  boolean isGreaterThan(Point point){
+		return point.isLessThan(value);
+	}
+	public boolean isLessThan(Point point){
+		return point.isGreaterThan(value);
+	}*/
 	
 	public boolean isLessThan(ExactPoint point) {
 		return point.isGreaterThan(value);
@@ -27,14 +32,9 @@ public abstract class Point {
 		return point.isGreaterThan(value);
 	}
 	public boolean isGreaterThan(OpenPoint point) {
-		return point.isLessThan(this.value);
+		return point.isLessThan(value);
 
 	}
-	
-	
-	
-	//public abstract boolean isLessThan(OpenPoint point);
-	//public abstract boolean isGreaterThan(OpenPoint point);
 	
 	public double getValue() {
 		return value;
